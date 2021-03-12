@@ -1,14 +1,6 @@
 <main>
-
-  <!-- <div class="preloader bg-dark flex-column justify-content-center align-items-center">
-     <div class="position-relative">
-       <img src="../assets/img/brand/light-without-letter.svg" alt="Logo loader">
-       <img src="../assets/img/brand/letter.svg" class="rotate-letter" alt="Letter loader">
-     </div>sdfsdf
-   </div>-->
-
-  <!-- Hero -->
   <section class="section section-header section-image bg-primary overlay-primary text-white pb-4 pb-md-7" data-background="/assets/img/loft.jpg" style="background-image: url('/assets/img/loft.jpg')">
+    <form>
     <div class="container">
       <div class="row justify-content-center mb-4 mb-xl-5">
         <div class="col-12 col-xl-10 text-center">
@@ -21,39 +13,66 @@
             Discover and reserve property today.
           </p>
         </div>
-      </div>
-      <div class="row mb-5">
-        <div class="col-12">
-          <div class="card p-md-2">
-            <div class="card-body p-2 p-md-0">
-              <form autocomplete="off" class="row" method="get" action="./all-spaces.html">
-                <div class="col-12 col-lg-5">
-                  <div class="form-group form-group-lg mb-lg-0">
-                    <div class="input-group">
-                      <div class="input-group-prepend">
-                        <span class="input-group-text"><span class="fas fa-map-marker-alt"></span></span>
+
+
+          <div class="col-12 col-xl-10">
+            <div class=" p-md-2">
+              <div class=" p-2 p-md-0">
+                <div class="row">
+
+                  <div class="col-12 col-lg-4">
+                    <div class="form-group form-group-lg mb-lg-0">
+                      <div class="btn-group btn-group-toggle " ngbRadioGroup>
+                        <label ngbButtonLabel class="text-white">
+                          <input ngbButton type="radio" value="1"> Residential
+                        </label>
+                        <label ngbButtonLabel class="text-white">
+                          <input ngbButton type="radio" value="2"> Commercial
+                        </label>
                       </div>
-                      <input id="search-location" type="text" class="form-control autocomplete" placeholder="Search location" required>
                     </div>
                   </div>
+
+
                 </div>
-                <div class="col-12 col-lg-4">
-                  <div class="input-group input-group-lg mb-3 mb-lg-0">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
-                    </div>
-                    <input class="form-control datepicker" placeholder="Select date" type="text" required>
-                  </div>
-                </div>
-                <div class="col-12 col-lg-3">
-                  <button class="btn btn-lg btn-primary btn-block animate-up-2" type="submit">Search</button>
-                </div>
-              </form>
+              </div>
             </div>
           </div>
-        </div>
+
+          <div class="col-12 col-xl-10">
+            <div class="card p-md-2">
+              <div class="card-body p-2 p-md-0">
+                <div class="row">
+                  <div class="col-12 col-lg-5">
+                    <div class="form-group form-group-lg mb-lg-0">
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text"><span class="fas fa-map-marker-alt"></span></span>
+                        </div>
+                        <input id="search-location" type="text" class="form-control autocomplete" placeholder="Search location" required>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 col-lg-4">
+                    <div class="input-group input-group-lg mb-3 mb-lg-0">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+                      </div>
+                      <input class="form-control datepicker" placeholder="Select date" type="text" required>
+                    </div>
+                  </div>
+                  <div class="col-12 col-lg-3">
+                    <button class="btn btn-lg btn-primary btn-block animate-up-2" type="submit">Search</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
       </div>
+
     </div>
+    </form>
   </section>
   <section class="section section-lg pb-lg-6 pb-5">
     <div class="container">

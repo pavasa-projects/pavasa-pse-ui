@@ -30363,7 +30363,7 @@ button.section-github:focus {
 
   .section-header {
     position: relative;
-    padding-top: 10rem;
+   /* padding-top: 10rem;*/
     padding-bottom: 10rem;
   }
 

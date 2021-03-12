@@ -21,6 +21,7 @@
     "@angular/router": "~11.2.4",
     "@ctrl/ngx-headroom": "^4.0.0",
     "@fortawesome/fontawesome-free": "^5.15.2",
+    "@ng-bootstrap/ng-bootstrap": "^9.0.2",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.3"
