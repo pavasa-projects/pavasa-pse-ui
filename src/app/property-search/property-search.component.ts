@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {FormBuilder, FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-property-search',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PropertySearchComponent implements OnInit {
 
-  constructor() { }
+  public form: FormGroup;
+
+  constructor(private fb: FormBuilder) {
+  }
 
   ngOnInit(): void {
+    this.form = this.fb.group({
+      typeOfProperty: 'Residential'
+    });
   }
 
 }
