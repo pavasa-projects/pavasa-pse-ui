@@ -40771,7 +40771,7 @@ label.text-white.btn {
 }
 
 .custom-multiselect .multiselect-dropdown .dropdown-btn {
-  height: 3.425rem !important;
+  min-height: 3.425rem !important;
   font-size: 1.125rem !important;
   border: 0.0625rem solid #edf0f7 !important;
   color: #424767 !important;
@@ -40781,4 +40781,10 @@ label.text-white.btn {
 
 .custom-multiselect .multiselect-dropdown .dropdown-btn span.dropdown-multiselect__caret{
   line-height: 36px !important;
+}
+
+.navbar-transparent {
+  background-color: #0d1b48;
+  border: 0;
+  box-shadow: none;
 }

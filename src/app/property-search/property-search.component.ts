@@ -11,7 +11,7 @@ import {IDropdownSettings} from 'ng-multiselect-dropdown';
 export class PropertySearchComponent implements OnInit {
 
   dropdownList = [];
-  selectedItems = [];
+  propertyTypeList = [];
   dropdownSettings: IDropdownSettings = {};
 
 
@@ -23,8 +23,19 @@ export class PropertySearchComponent implements OnInit {
   ngOnInit(): void {
     this.form = this.fb.group({
       typeOfProperty: 'Residential',
-      bhkType: ''
+      bhkType: '',
+      propertyTypes: ''
     });
+
+    this.propertyTypeList = [
+      {item_id: 'Office space', item_text: 'Office space'},
+      {item_id: 'Co-working', item_text: 'Co-working'},
+      {item_id: 'Restaurant/Cafe', item_text: 'Restaurant/Cafe'},
+      {item_id: 'Shop/Showroom', item_text: 'Shop/Showroom'},
+      {item_id: 'Industrial building', item_text: 'Industrial building'},
+      {item_id: 'Industrial Shed', item_text: 'Industrial Shed'},
+      {item_id: 'Godown/Warehouse', item_text: 'Godown/Warehouse'}
+    ];
 
     this.dropdownList = [
       {item_id: 1, item_text: '1 BHK'},
@@ -37,7 +48,7 @@ export class PropertySearchComponent implements OnInit {
       {item_id: 3, item_text: 'Pune'},
       {item_id: 4, item_text: 'Navsari'}
     ];*/
-    this.dropdownSettings  = {
+    this.dropdownSettings = {
       singleSelection: false,
       idField: 'item_id',
       textField: 'item_text',
@@ -46,7 +57,7 @@ export class PropertySearchComponent implements OnInit {
       enableCheckAll: false,
       itemsShowLimit: 2,
       allowSearchFilter: false,
-      showSelectedItemsAtTop: false
+      showSelectedItemsAtTop: true
     };
   }
 

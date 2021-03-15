@@ -1,5 +1,5 @@
 <main>
-  <section class="section section-header section-image bg-primary overlay-primary text-white pb-4 pb-md-7"
+  <section class="section section-header section-image bg-primary overlay-primary text-white pb-4 pb-md-6"
            data-background="/assets/img/loft.jpg" style="background-image: url('/assets/img/loft.jpg')">
     <form autocomplete="off" [formGroup]="form" class="property-search">
       <div class="container">
@@ -52,16 +52,25 @@
                   <div class="col-12 col-lg-3">
                     <div class="form-group form-group-lg mb-lg-0">
 
-                      <ng-multiselect-dropdown
+                      <ng-multiselect-dropdown *ngIf="this.form.get('typeOfProperty').value == 'Residential'"
                         [placeholder]="'Select BHKs'"
                         [settings]="dropdownSettings"
                         [data]="dropdownList"
-                        [(ngModel)]="selectedItems"
                         (onSelect)="onItemSelect($event)"
                         (onSelectAll)="onSelectAll($event)"
                         class="custom-multiselect"
                         formControlName="bhkType"
+                      >
+                      </ng-multiselect-dropdown>
 
+                      <ng-multiselect-dropdown *ngIf="this.form.get('typeOfProperty').value == 'Commercial'"
+                                               [placeholder]="'Property Type'"
+                                               [settings]="dropdownSettings"
+                                               [data]="propertyTypeList"
+                                               (onSelect)="onItemSelect($event)"
+                                               (onSelectAll)="onSelectAll($event)"
+                                               class="custom-multiselect"
+                                               formControlName="propertyTypes"
                       >
                       </ng-multiselect-dropdown>
 
@@ -105,7 +114,7 @@
       </div>
     </form>
   </section>
-  <section class="section section-lg pb-lg-6 pb-5">
+  <section class="section pb-lg-6 pb-5">
     <div class="container">
       <div class="row">
         <div class="col-12 col-sm-6 col-md-4 text-center mb-4 mb-md-0 px-lg-4">
