@@ -7,9 +7,10 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { PropertySearchComponent } from './property-search/property-search.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AutocompleteLocationComponent } from './common/autocomplete-location/autocomplete-location.component';
 import {GooglePlaceModule} from 'ngx-google-places-autocomplete';
+import {NgMultiSelectDropDownModule} from 'ng-multiselect-dropdown';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,9 @@ import {GooglePlaceModule} from 'ngx-google-places-autocomplete';
     AppRoutingModule,
     NgbModule,
     ReactiveFormsModule,
-    GooglePlaceModule
+    GooglePlaceModule,
+    NgMultiSelectDropDownModule.forRoot(),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -44,28 +44,54 @@
             <div class="card p-md-2">
               <div class="card-body p-2 p-md-0">
                 <div class="row">
-                  <div class="col-12 col-lg-5">
+                  <div class="col-12 col-lg-6">
                     <div class="form-group form-group-lg mb-lg-0">
-                      <!--<div class="input-group">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text"><span class="fas fa-map-marker-alt"></span></span>
-                        </div>
-                        <input id="search-location" type="text" class="form-control autocomplete"
-                               placeholder="Search location" required>
-                        &lt;!&ndash;<app-autocomplete-location></app-autocomplete-location>&ndash;&gt;
-                      </div>-->
                       <app-autocomplete-location></app-autocomplete-location>
                     </div>
                   </div>
-                  <div class="col-12 col-lg-4">
-                    <div class="input-group input-group-lg mb-3 mb-lg-0">
+                  <div class="col-12 col-lg-3">
+                    <div class="form-group form-group-lg mb-lg-0">
 
-                      <input class="form-control datepicker" placeholder="All Properties" type="text" required>
-                      <!--<div class="input-group-prepend">-->
-                        <span class="input-group-text"><i class="fas fa-angle-down nav-link-arrow"></i></span>
-                      <!--</div>-->
+                      <ng-multiselect-dropdown
+                        [placeholder]="'Select BHKs'"
+                        [settings]="dropdownSettings"
+                        [data]="dropdownList"
+                        [(ngModel)]="selectedItems"
+                        (onSelect)="onItemSelect($event)"
+                        (onSelectAll)="onSelectAll($event)"
+                        class="custom-multiselect"
+                        formControlName="bhkType"
+
+                      >
+                      </ng-multiselect-dropdown>
+
                     </div>
-                  </div>
+
+
+
+
+
+
+                    </div>
+                  <ng-template #popAllProperties>
+                      <div class="modal-body">
+
+
+                        <div class="input-group">
+                          <label for="propertyTypeSelect">Property Type</label>
+                          <select id="propertyTypeSelect" class="custom-select">
+                            <option>Office space</option>
+                            <option>Shop</option>
+                            <option>Showroom</option>
+                            <option>Industrial Building</option>
+                          </select>
+
+                        </div>
+                      </div>
+
+                  </ng-template>
+
+
                   <div class="col-12 col-lg-3">
                     <button class="btn btn-lg btn-primary btn-block animate-up-2" type="submit">Search</button>
                   </div>

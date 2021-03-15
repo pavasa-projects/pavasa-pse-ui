@@ -40763,3 +40763,22 @@ label.text-white.btn.active {
 label.text-white.btn {
   border-width: 5px !important;
 }
+
+
+.increase-popover-width {
+  max-width: 150%;
+  width : 150%;
+}
+
+.custom-multiselect .multiselect-dropdown .dropdown-btn {
+  height: 3.425rem !important;
+  font-size: 1.125rem !important;
+  border: 0.0625rem solid #edf0f7 !important;
+  color: #424767 !important;
+  padding: 0.9rem 0.75rem !important;
+  font-weight: 300 !important;
+}
+
+.custom-multiselect .multiselect-dropdown .dropdown-btn span.dropdown-multiselect__caret{
+  line-height: 36px !important;
+}
