@@ -53,13 +53,13 @@
                     <div class="form-group form-group-lg mb-lg-0">
 
                       <ng-multiselect-dropdown *ngIf="this.form.get('typeOfProperty').value == 'Residential'"
-                        [placeholder]="'Select BHKs'"
-                        [settings]="dropdownSettings"
-                        [data]="dropdownList"
-                        (onSelect)="onItemSelect($event)"
-                        (onSelectAll)="onSelectAll($event)"
-                        class="custom-multiselect"
-                        formControlName="bhkType"
+                                               [placeholder]="'Select BHKs'"
+                                               [settings]="dropdownSettings"
+                                               [data]="dropdownList"
+                                               (onSelect)="onItemSelect($event)"
+                                               (onSelectAll)="onSelectAll($event)"
+                                               class="custom-multiselect"
+                                               formControlName="bhkType"
                       >
                       </ng-multiselect-dropdown>
 
@@ -75,34 +75,9 @@
                       </ng-multiselect-dropdown>
 
                     </div>
-
-
-
-
-
-
-                    </div>
-                  <ng-template #popAllProperties>
-                      <div class="modal-body">
-
-
-                        <div class="input-group">
-                          <label for="propertyTypeSelect">Property Type</label>
-                          <select id="propertyTypeSelect" class="custom-select">
-                            <option>Office space</option>
-                            <option>Shop</option>
-                            <option>Showroom</option>
-                            <option>Industrial Building</option>
-                          </select>
-
-                        </div>
-                      </div>
-
-                  </ng-template>
-
-
+                  </div>
                   <div class="col-12 col-lg-3">
-                    <button class="btn btn-lg btn-primary btn-block animate-up-2" type="submit">Search</button>
+                    <button class="btn btn-lg btn-primary btn-block animate-up-2" type="submit" [routerLink]="['/search-result']">Search</button>
                   </div>
                 </div>
               </div>

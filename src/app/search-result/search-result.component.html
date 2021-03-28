@@ -1,0 +1,307 @@
+<main>
+
+  <!-- Hero -->
+  <!--<div class="section section-header section-image bg-tertiary overlay-primary text-white overflow-hidden">
+  </div>-->
+  <div class="section  pt-6 pb-4">
+    <div class=" ">
+      <div class="row">
+        <div class="col-12">
+          <div class="card bg-soft  border-light">
+            <div class="card-body p-4">
+              <form autocomplete="off" method="get" action="#">
+                <div class="row">
+                  <div class="col-12">
+                    <div class="row">
+                      <div class="col-12 col-lg-3">
+                        <div class="form-group form-group-lg mb-lg-0">
+                          <app-autocomplete-location></app-autocomplete-location>
+                        </div>
+                      </div>
+                      <div class="col-12 col-lg-2">
+                        <div class="form-group form-group-lg mb-0">
+                          <ng-multiselect-dropdown *ngIf="this.form.get('typeOfProperty').value == 'Residential'"
+                                                   [placeholder]="'Select BHKs'"
+                                                   [settings]="dropdownSettings"
+                                                   [data]="dropdownList"
+                                                   (onSelect)="onItemSelect($event)"
+                                                   (onSelectAll)="onSelectAll($event)"
+                                                   class="custom-multiselect-result "
+                                                   formControlName="bhkType"
+                          >
+                          </ng-multiselect-dropdown>
+                        </div>
+                      </div>
+                      <div class="col-12 col-lg-2">
+                        <div class="form-group form-group-lg mb-0">
+                          <ng-multiselect-dropdown *ngIf="this.form.get('typeOfProperty').value == 'Residential'"
+                                                   [placeholder]="'Budget'"
+                                                   [settings]="dropdownSettings"
+                                                   [data]="dropdownList"
+                                                   (onSelect)="onItemSelect($event)"
+                                                   (onSelectAll)="onSelectAll($event)"
+                                                   class="custom-multiselect-result"
+                                                   formControlName="bhkType"
+                          >
+                          </ng-multiselect-dropdown>
+                        </div>
+                      </div>
+
+                      <div class="col-12 col-lg-2">
+                        <div class="form-group form-group-lg mb-0">
+                          <ng-multiselect-dropdown *ngIf="this.form.get('typeOfProperty').value == 'Residential'"
+                                                   [placeholder]="'Property Type'"
+                                                   [settings]="dropdownSettings"
+                                                   [data]="dropdownList"
+                                                   (onSelect)="onItemSelect($event)"
+                                                   (onSelectAll)="onSelectAll($event)"
+                                                   class="custom-multiselect-result"
+                                                   formControlName="bhkType"
+                          >
+                          </ng-multiselect-dropdown>
+                        </div>
+                      </div>
+
+                      <div class="col-12 col-lg-2">
+                        <div class="form-group form-group-lg mb-0">
+                          <ng-multiselect-dropdown *ngIf="this.form.get('typeOfProperty').value == 'Residential'"
+                                                   [placeholder]="'Furnishing'"
+                                                   [settings]="dropdownSettings"
+                                                   [data]="dropdownList"
+                                                   (onSelect)="onItemSelect($event)"
+                                                   (onSelectAll)="onSelectAll($event)"
+                                                   class="custom-multiselect-result"
+                                                   formControlName="bhkType"
+                          >
+                          </ng-multiselect-dropdown>
+                        </div>
+                      </div>
+
+                      <div class="col-12 col-lg-1">
+                        <div class="form-group form-group-lg mb-0">
+                          <ng-multiselect-dropdown *ngIf="this.form.get('typeOfProperty').value == 'Residential'"
+                                                   [placeholder]="'More'"
+                                                   [settings]="dropdownSettings"
+                                                   [data]="dropdownList"
+                                                   (onSelect)="onItemSelect($event)"
+                                                   (onSelectAll)="onSelectAll($event)"
+                                                   class="custom-multiselect-result"
+                                                   formControlName="bhkType"
+                          >
+                          </ng-multiselect-dropdown>
+                        </div>
+                      </div>
+
+
+                    </div>
+                  </div>
+                </div>
+
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section section-lg pt-0">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 mb-5">
+          <div class="justify-content-between align-items-center d-none d-md-flex">
+            <div class="mr-3">
+              <h2 class="h6 mb-3 mb-md-0">Total Properties Found: <span class="font-weight-bolder text-primary">208</span></h2>
+            </div>
+          </div>
+          <div class="tab-content mt-4 mt-lg-4" id="tabcontentexample-5">
+            <div class="tab-pane fade show active" id="link-example-13" role="tabpanel" aria-labelledby="tab-link-example-13">
+              <div class="row justify-content-center">
+                <div class="col-12 col-sm-10 col-md-6 col-lg-12">
+                  <div class="card border-light mb-4 animate-up-5">
+                    <div class="row no-gutters align-items-center">
+                      <div class="col-12 col-lg-6 col-xl-5">
+                        <a href="./single-space.html">
+                          <img src="../assets/img/private-office.jpg" alt="private office" class="card-img p-2 rounded-xl">
+                        </a>
+                      </div>
+                      <div class="col-12 col-lg-6 col-xl-7">
+                        <div class="card-body">
+                          <a href="./single-space.html">
+                            <h4 class="h5">Collaborative Workspace</h4>
+                          </a>
+                          <div class="d-flex my-4">
+                            <span class="star fas fa-star text-warning"></span>
+                            <span class="star fas fa-star text-warning"></span>
+                            <span class="star fas fa-star text-warning"></span>
+                            <span class="star fas fa-star text-warning"></span>
+                            <span class="star fas fa-star text-warning"></span>
+                            <span class="badge badge-pill badge-primary ml-2">5.0</span>
+                          </div>
+                          <ul class="list-group mb-3">
+                            <li class="list-group-item small p-0"><span class="fas fa-map-marker-alt mr-2"></span>New York, Manhattan, USA</li>
+                            <li class="list-group-item small p-0"><span class="fas fa-bullseye mr-2"></span>Old Street (2 mins walk)</li>
+                            <li class="list-group-item small p-0"><span class="fas fa-bullseye mr-2"></span>Shoreditch High Street (10 mins walk)</li>
+                          </ul>
+                          <div class="d-flex justify-content-between">
+                            <div class="col pl-0">
+                              <span class="text-muted font-small d-block mb-2">Monthly</span>
+                              <span class="h5 text-dark font-weight-bold">500$</span>
+                            </div>
+                            <div class="col">
+                              <span class="text-muted font-small d-block mb-2">People</span>
+                              <span class="h5 text-dark font-weight-bold">12</span>
+                            </div>
+                            <div class="col pr-0">
+                              <span class="text-muted font-small d-block mb-2">Sq.Ft</span>
+                              <span class="h5 text-dark font-weight-bold">1200</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-10 col-md-6 col-lg-12 mb-4">
+                  <div class="card border-light mb-4 animate-up-5">
+                    <div class="row no-gutters align-items-center">
+                      <div class="col-12 col-lg-6 col-xl-5">
+                        <a href="./single-space.html">
+                          <img src="../assets/img/meeting-office.jpg" alt="meeting office" class="card-img p-2 rounded-xl">
+                        </a>
+                      </div>
+                      <div class="col-12 col-lg-6 col-xl-7">
+                        <div class="card-body">
+                          <a href="./single-space.html">
+                            <h4 class="h5">Meeting Office Space</h4>
+                          </a>
+                          <div class="d-flex my-4">
+                            <span class="star fas fa-star text-warning"></span>
+                            <span class="star fas fa-star text-warning"></span>
+                            <span class="star fas fa-star text-warning"></span>
+                            <span class="star fas fa-star text-warning"></span>
+                            <span class="star fas fa-star text-light"></span>
+                            <span class="badge badge-pill badge-primary ml-2">4.0</span>
+                          </div>
+                          <ul class="list-group mb-3">
+                            <li class="list-group-item small p-0"><span class="fas fa-map-marker-alt mr-2"></span>New York, Manhattan, USA</li>
+                            <li class="list-group-item small p-0"><span class="fas fa-bullseye mr-2"></span>Old Street (2 mins walk)</li>
+                            <li class="list-group-item small p-0"><span class="fas fa-bullseye mr-2"></span>Shoreditch High Street (10 mins walk)</li>
+                          </ul>
+                          <div class="d-flex justify-content-between">
+                            <div class="col pl-0">
+                              <span class="text-muted font-small d-block mb-2">Monthly</span>
+                              <span class="h5 text-dark font-weight-bold">50$</span>
+                            </div>
+                            <div class="col">
+                              <span class="text-muted font-small d-block mb-2">People</span>
+                              <span class="h5 text-dark font-weight-bold">2-4</span>
+                            </div>
+                            <div class="col pr-0">
+                              <span class="text-muted font-small d-block mb-2">Sq.Ft</span>
+                              <span class="h5 text-dark font-weight-bold">400</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-10 col-md-6 col-lg-12 mb-4">
+                  <div class="card border-light mb-4 animate-up-5">
+                    <div class="row no-gutters align-items-center">
+                      <div class="col-12 col-lg-6 col-xl-5">
+                        <a href="./single-space.html">
+                          <img src="../assets/img/conference-office.jpg" alt="conference office" class="card-img p-2 rounded-xl">
+                        </a>
+                      </div>
+                      <div class="col-12 col-lg-6 col-xl-7">
+                        <div class="card-body">
+                          <a href="./single-space.html">
+                            <h4 class="h5">Conference Room</h4>
+                          </a>
+                          <div class="d-flex my-4">
+                            <span class="star fas fa-star text-warning"></span>
+                            <span class="star fas fa-star text-warning"></span>
+                            <span class="star fas fa-star text-warning"></span>
+                            <span class="star fas fa-star text-warning"></span>
+                            <span class="fas fa-star-half text-warning"></span>
+                            <span class="badge badge-pill badge-primary ml-2">4.7</span>
+                          </div>
+                          <ul class="list-group mb-3">
+                            <li class="list-group-item small p-0"><span class="fas fa-map-marker-alt mr-2"></span>Paris, Île-de-France, France</li>
+                            <li class="list-group-item small p-0"><span class="fas fa-bullseye mr-2"></span>LE BHV MARAIS  (5 mins walk)</li>
+                            <li class="list-group-item small p-0"><span class="fas fa-bullseye mr-2"></span>Shakespeare & Company (15 mins walk)</li>
+                          </ul>
+                          <div class="d-flex justify-content-between">
+                            <div class="col pl-0">
+                              <span class="text-muted font-small d-block mb-2">Monthly</span>
+                              <span class="h5 text-dark font-weight-bold">150$</span>
+                            </div>
+                            <div class="col">
+                              <span class="text-muted font-small d-block mb-2">People</span>
+                              <span class="h5 text-dark font-weight-bold">2-10</span>
+                            </div>
+                            <div class="col pr-0">
+                              <span class="text-muted font-small d-block mb-2">Sq.Ft</span>
+                              <span class="h5 text-dark font-weight-bold">200</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-10 col-md-6 col-lg-12 mb-4">
+                  <div class="card border-light mb-4 animate-up-5">
+                    <div class="row no-gutters align-items-center">
+                      <div class="col-12 col-lg-6 col-xl-5">
+                        <a href="./single-space.html">
+                          <img src="../assets/img/lifestyle-office.jpg" alt="lifestyle office" class="card-img p-2 rounded-xl">
+                        </a>
+                      </div>
+                      <div class="col-12 col-lg-6 col-xl-7">
+                        <div class="card-body">
+                          <a href="./single-space.html">
+                            <h4 class="h5">Lifestyle Space</h4>
+                          </a>
+                          <div class="d-flex my-4">
+                            <i class="star fas fa-star text-warning"></i>
+                            <i class="star fas fa-star text-warning"></i>
+                            <i class="star fas fa-star text-warning"></i>
+                            <i class="star fas fa-star text-warning"></i>
+                            <i class="star fas fa-star text-warning"></i>
+                            <span class="badge badge-pill badge-primary ml-2">4.7</span>
+                          </div>
+                          <ul class="list-group mb-3">
+                            <li class="list-group-item small p-0"><span class="fas fa-map-marker-alt mr-2"></span>Madrid, Hortaleza, Spain</li>
+                            <li class="list-group-item small p-0"><span class="fas fa-bullseye mr-2"></span>Plaza Mayor (2 mins walk)</li>
+                            <li class="list-group-item small p-0"><span class="fas fa-bullseye mr-2"></span>eal Casa de Correos (15 mins walk)</li>
+                          </ul>
+                          <div class="d-flex justify-content-between">
+                            <div class="col pl-0">
+                              <span class="text-muted font-small d-block mb-2">Monthly</span>
+                              <span class="h5 text-dark font-weight-bold">200$</span>
+                            </div>
+                            <div class="col">
+                              <span class="text-muted font-small d-block mb-2">People</span>
+                              <span class="h5 text-dark font-weight-bold">10-30</span>
+                            </div>
+                            <div class="col pr-0">
+                              <span class="text-muted font-small d-block mb-2">Sq.Ft</span>
+                              <span class="h5 text-dark font-weight-bold">500</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</main>

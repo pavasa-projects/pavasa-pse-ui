@@ -1,16 +1,13 @@
-import {Component, OnInit, ViewEncapsulation} from '@angular/core';
-import {FormBuilder, FormGroup} from '@angular/forms';
-import {IDropdownSettings} from 'ng-multiselect-dropdown';
+import {Component, OnInit} from '@angular/core';
 import {FormComponent} from '../common/form/form.component';
-
+import {FormBuilder} from '@angular/forms';
 
 @Component({
-  selector: 'app-property-search',
-  templateUrl: './property-search.component.html',
-  styleUrls: ['./property-search.component.css']
+  selector: 'app-search-result',
+  templateUrl: './search-result.component.html',
+  styleUrls: ['./search-result.component.css']
 })
-export class PropertySearchComponent extends FormComponent implements OnInit {
-
+export class SearchResultComponent extends FormComponent implements OnInit {
 
   constructor(private fb: FormBuilder) {
     super();
@@ -22,7 +19,6 @@ export class PropertySearchComponent extends FormComponent implements OnInit {
       bhkType: '',
       propertyTypes: ''
     });
-
   }
 
   onItemSelect(item: any): void {

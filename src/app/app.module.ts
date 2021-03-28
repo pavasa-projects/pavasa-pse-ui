@@ -11,12 +11,16 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AutocompleteLocationComponent } from './common/autocomplete-location/autocomplete-location.component';
 import {GooglePlaceModule} from 'ngx-google-places-autocomplete';
 import {NgMultiSelectDropDownModule} from 'ng-multiselect-dropdown';
+import { SearchResultComponent } from './search-result/search-result.component';
+import { FormComponent } from './common/form/form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PropertySearchComponent,
-    AutocompleteLocationComponent
+    AutocompleteLocationComponent,
+    SearchResultComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule,
