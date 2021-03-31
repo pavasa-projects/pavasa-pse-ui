@@ -40802,3 +40802,7 @@ label.text-white.btn {
   border: 0;
   box-shadow: none;
 }
+
+.search-result.input.form-control.autocomplete {
+  border: 1px solid #adadad !important;
+}

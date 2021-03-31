@@ -13,6 +13,7 @@ import {GooglePlaceModule} from 'ngx-google-places-autocomplete';
 import {NgMultiSelectDropDownModule} from 'ng-multiselect-dropdown';
 import { SearchResultComponent } from './search-result/search-result.component';
 import { FormComponent } from './common/form/form.component';
+import { PropertyDetailsComponent } from './property-details/property-details.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { FormComponent } from './common/form/form.component';
     PropertySearchComponent,
     AutocompleteLocationComponent,
     SearchResultComponent,
-    FormComponent
+    FormComponent,
+    PropertyDetailsComponent
   ],
   imports: [
     BrowserModule,
