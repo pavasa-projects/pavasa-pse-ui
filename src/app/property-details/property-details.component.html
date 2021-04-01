@@ -1,1 +1,140 @@
-<p>property-details works!</p>
+<main>
+
+
+  <!-- Hero -->
+
+
+  <div class="section section-lg pt-7">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-lg-8">
+          <!-- Tab -->
+          <nav>
+            <div class="nav nav-tabs flex-column flex-md-row border-light mb-3" id="nav-tab"
+                 role="tablist">
+              <a class="nav-item nav-link" id="nav-about-tab" data-toggle="tab" [routerLink]="['about']" [routerLinkActive]="['active']"
+                 role="tab" aria-controls="nav-about" aria-selected="true"><span class="far fa-address-card mr-2"></span>About</a>
+              <a class="nav-item nav-link" id="nav-amenities-tab" data-toggle="tab" [routerLink]="['amenities']" [routerLinkActive]="['active']"
+                 role="tab" aria-controls="nav-amenities" aria-selected="false"><span class="fas fa-cubes mr-2"></span>Amenities</a>
+              <a class="nav-item nav-link" id="nav-location-tab" data-toggle="tab" [routerLink]="['location']" [routerLinkActive]="['active']"
+                 role="tab" aria-controls="nav-location" aria-selected="false"><span class="fas fa-map-marker-alt mr-2"></span>Location</a>
+            </div>
+          </nav>
+          <!-- About Tab -->
+          <div class="tab-content mt-5 mb-3" id="nav-tabContent">
+            <router-outlet></router-outlet>
+
+          </div>
+          <!-- End of tab -->
+        </div>
+        <aside class="col-12 col-lg-4 mt-3 mt-lg-0">
+          <div class="card bg-soft border-light p-3">
+            <div class="d-flex align-items-baseline">
+              <span class="h3 font-weight-bold mb-0 mr-1">$ 250</span>
+              <span class="small">/month</span>
+            </div>
+          </div>
+          <div class="card border-light mt-4 p-3">
+            <button class="btn btn-primary availability" value="06/20/2018">Booking Availability</button>
+          </div>
+          <div class="card border-light mt-4 p-3">
+            <h5 class="font-weight-normal">Property Owner</h5>
+            <div class="media d-flex align-items-center my-3">
+              <a href="./profile.html" class="avatar-lg mr-2" data-toggle="tooltip" data-placement="top" title="More details">
+                <img class="img-fluid rounded-circle" src="../assets/img/team/profile-picture-1.jpg" alt="avatar">
+              </a>
+              <div class="avatar-name"><a class="text-gray" href="./profile.html" data-toggle="tooltip" data-placement="top" title="More details">Jose Leos</a></div>
+            </div>
+            <!-- Button Modal -->
+            <button type="button" class="btn btn-block btn-secondary mb-3" data-toggle="modal"
+                    data-target="#modal-form">Contact Host</button>
+            <!-- Modal Content -->
+            <div class="modal fade" id="modal-form" tabindex="-1" role="dialog" aria-labelledby="modal-form"
+                 aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered modal-md" role="document">
+                <div class="modal-content">
+                  <div class="modal-body p-0">
+                    <div class="card shadow-md border-0">
+                      <div class="card-body position-relative">
+                        <button type="button" class="close mb-2" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">×</span>
+                        </button>
+                        <form class="mt-3">
+                          <div class="form-group">
+                            <div class="input-group mb-4">
+                              <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="far fa-user"></i></span>
+                              </div>
+                              <input class="form-control" placeholder="Name" type="text"
+                                     required>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="input-group mb-4">
+                              <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="far fa-envelope"></i></span>
+                              </div>
+                              <input class="form-control" placeholder="Email" type="email"
+                                     required>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                                                            <textarea class="form-control" placeholder="Write message"
+                                                                      id="message-2" rows="4" required></textarea>
+                          </div>
+                          <div class="text-center">
+                            <button type="submit" class="btn btn-block btn-primary mt-4">Send
+                              Message</button>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End of Modal Content -->
+          </div>
+          <div class="card border-light mt-4 p-3">
+            <h5 class="font-weight-normal">Request Desk</h5>
+            <form class="mt-3">
+              <div class="form-group">
+                <div class="input-group mb-4">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="far fa-user"></i></span>
+                  </div>
+                  <input class="form-control" placeholder="Name" type="text" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="input-group mb-4">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="far fa-envelope"></i></span>
+                  </div>
+                  <input class="form-control" placeholder="Email" type="email" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="input-group mb-4">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-mobile"></i></span>
+                  </div>
+                  <input class="form-control" placeholder="Phone" type="number" required>
+                </div>
+              </div>
+              <div class="form-group">
+                                    <textarea class="form-control" placeholder="Write short message to host" id="message"
+                                              rows="4" required></textarea>
+              </div>
+              <div class="text-center">
+                <button type="submit" class="btn btn-block btn-primary mt-4">Send Request</button>
+              </div>
+            </form>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+
+  <!-- End of section -->
+</main>
