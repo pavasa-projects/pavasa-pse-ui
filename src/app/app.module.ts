@@ -17,6 +17,7 @@ import {PropertyDetailsComponent} from './property-details/property-details.comp
 import {PropertyAboutComponent} from './property-details/property-about/property-about.component';
 import {PropertyAmenitiesComponent} from './property-details/property-amenities/property-amenities.component';
 import {PropertyLocationComponent} from './property-details/property-location/property-location.component';
+import {NgxGalleryModule} from 'ngx-gallery-9';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import {PropertyLocationComponent} from './property-details/property-location/pr
     ReactiveFormsModule,
     GooglePlaceModule,
     NgMultiSelectDropDownModule.forRoot(),
-    FormsModule
+    FormsModule,
+    NgxGalleryModule
   ],
   providers: [],
   bootstrap: [AppComponent]

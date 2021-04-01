@@ -1,32 +1,9 @@
 <div class="tab-pane fade show active" id="nav-about" role="tabpanel" aria-labelledby="nav-about-tab">
   <div class="row mb-5">
     <div class="col-12">
-      <div class="fancy-gallery mb-5">
+      <div class="fancy-gallery mb-5 pl-4 pr-4">
         <div class="row">
-          <a href="../assets/img/conference-office.jpg" class="mb-4 col-6 col-sm-4 img-fluid"
-             data-fancybox="images" data-caption="Conference Space">
-            <img class="rounded" src="../assets/img/conference-office.jpg" alt="" />
-          </a>
-          <a href="../assets/img/cowork-office.jpg" class="mb-4 col-6 col-sm-4 img-fluid"
-             data-fancybox="images" data-caption="Cowork Office">
-            <img class="rounded" src="../assets/img/cowork-office.jpg" alt="" />
-          </a>
-          <a href="../assets/img/lifestyle-office.jpg" class="mb-4 col-6 col-sm-4 img-fluid"
-             data-fancybox="images" data-caption="Lifestyle Space">
-            <img class="rounded" src="../assets/img/lifestyle-office.jpg" alt="" />
-          </a>
-          <a href="../assets/img/image-office.jpg" class="mb-4 col-6 col-sm-4 img-fluid"
-             data-fancybox="images" data-caption="Conference Space">
-            <img class="rounded" src="../assets/img/image-office.jpg" alt="" />
-          </a>
-          <a href="../assets/img/meeting-office.jpg" class="mb-4 col-6 col-sm-4 img-fluid"
-             data-fancybox="images" data-caption="Meeting Office">
-            <img class="rounded" src="../assets/img/meeting-office.jpg" alt="" />
-          </a>
-          <a href="../assets/img/private-office.jpg" class="mb-4 col-6 col-sm-4 img-fluid"
-             data-fancybox="images" data-caption="Private Space">
-            <img class="rounded" src="../assets/img/private-office.jpg" alt="" />
-          </a>
+          <ngx-gallery [options]="galleryOptions" [images]="galleryImages"></ngx-gallery>
         </div>
       </div>
       <p><span class="font-weight-bold">L'atelier</span> is the brainchild of 3 innovative
