@@ -40806,3 +40806,7 @@ label.text-white.btn {
 .search-result.input.form-control.autocomplete {
   border: 1px solid #adadad !important;
 }
+
+list-group.lis.display-block {
+  display: block;
+}

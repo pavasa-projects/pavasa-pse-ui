@@ -18,7 +18,7 @@ export class PropertyAboutComponent implements OnInit {
     this.galleryOptions = [
       {
         width: '100%',
-        height: '400px',
+        height: '350px',
         thumbnailsColumns: 3,
         imagePercent: 65,
         thumbnailsPercent: 35,
