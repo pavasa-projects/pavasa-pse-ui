@@ -6,6 +6,7 @@ import {PropertyDetailsComponent} from './property-details/property-details.comp
 import {PropertyAboutComponent} from './property-details/property-about/property-about.component';
 import {PropertyAmenitiesComponent} from './property-details/property-amenities/property-amenities.component';
 import {PropertyLocationComponent} from './property-details/property-location/property-location.component';
+import {PostPropertyComponent} from './post-property/post-property.component';
 
 const routes: Routes = [
   {path: 'property-search', component: PropertySearchComponent},
@@ -18,6 +19,7 @@ const routes: Routes = [
       {path: 'location', component: PropertyLocationComponent}
     ]
   },
+  {path: 'post-property', component: PostPropertyComponent},
   {path: '', component: PropertySearchComponent}
 ];
 
