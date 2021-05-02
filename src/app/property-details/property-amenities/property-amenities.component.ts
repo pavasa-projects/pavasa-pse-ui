@@ -29,6 +29,8 @@ export class PropertyAmenitiesComponent implements OnInit {
     {name: 'Sofa', enable: true},
     {name: 'Beds', enable: true},
     {name: 'TV', enable: true},
+    {name: 'Microwave', enable: true},
+    {name: 'Dinning Table', enable: true},
   ];
 
   constructor() {

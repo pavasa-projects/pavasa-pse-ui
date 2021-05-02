@@ -1,14 +1,13 @@
 import {Component, OnInit} from '@angular/core';
+import {FormComponent} from '../../common/form/form.component';
 import {FormBuilder, Validators} from '@angular/forms';
-import {FormComponent} from '../common/form/form.component';
 
 @Component({
-  selector: 'app-post-property',
-  templateUrl: './post-property.component.html',
-  styleUrls: ['./post-property.component.css']
+  selector: 'app-post-property-details',
+  templateUrl: './post-property-details.component.html',
+  styleUrls: ['./post-property-details.component.css']
 })
-export class PostPropertyComponent extends FormComponent implements OnInit {
-
+export class PostPropertyDetailsComponent extends FormComponent implements OnInit {
 
   constructor(private fb: FormBuilder) {
     super();
@@ -23,5 +22,4 @@ export class PostPropertyComponent extends FormComponent implements OnInit {
     });
 
   }
-
 }

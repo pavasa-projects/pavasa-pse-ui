@@ -11,13 +11,20 @@ export class FormComponent implements OnInit {
 
   dropdownList = [];
   propertyTypeList = [];
+  commercialPropertyTypeList = [];
+  residentialPropertyTypeList = ['cc', 'ddd'];
   dropdownSettings: IDropdownSettings = {};
+  bedrooms = [];
+  balconies = [];
+  bathrooms = [];
 
   public form: FormGroup;
 
 
   constructor() {
-    this.propertyTypeList = [
+    this.propertyTypeList = ['Residential', 'Commercial'];
+    this.residentialPropertyTypeList = ['cc', 'ddd'];
+    this.commercialPropertyTypeList = [
       {item_id: 'Office space', item_text: 'Office space'},
       {item_id: 'Co-working', item_text: 'Co-working'},
       {item_id: 'Restaurant/Cafe', item_text: 'Restaurant/Cafe'},
@@ -34,6 +41,11 @@ export class FormComponent implements OnInit {
       {item_id: 4, item_text: '4 BHK'},
       {item_id: 5, item_text: '4+ BHK'}
     ];
+
+    this.bedrooms = ['1', '2', '3', '4', '5', '6', '7', '7+'];
+
+    this.balconies = ['0', '1', '2', '3', '4', '4+'];
+    this.bathrooms = ['1', '2', '3', '4', '4+'];
     /*this.selectedItems = [
       {item_id: 3, item_text: 'Pune'},
       {item_id: 4, item_text: 'Navsari'}

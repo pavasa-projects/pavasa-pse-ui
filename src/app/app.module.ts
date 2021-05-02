@@ -19,6 +19,9 @@ import {PropertyAmenitiesComponent} from './property-details/property-amenities/
 import {PropertyLocationComponent} from './property-details/property-location/property-location.component';
 import {NgxGalleryModule} from 'ngx-gallery-9';
 import { PostPropertyComponent } from './post-property/post-property.component';
+import { LoginComponent } from './login/login.component';
+import { PostPropertyDetailsComponent } from './post-property/post-property-details/post-property-details.component';
+import { PostPropertyLocationComponent } from './post-property/post-property-location/post-property-location.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +34,10 @@ import { PostPropertyComponent } from './post-property/post-property.component';
     PropertyAboutComponent,
     PropertyAmenitiesComponent,
     PropertyLocationComponent,
-    PostPropertyComponent
+    PostPropertyComponent,
+    LoginComponent,
+    PostPropertyDetailsComponent,
+    PostPropertyLocationComponent
   ],
   imports: [
     BrowserModule,
