@@ -271,7 +271,7 @@ th {
 
 label {
   display: inline-block;
-  margin-bottom: 0.5rem;
+  /*margin-bottom: 0.5rem;*/
 }
 
 button {
@@ -2837,14 +2837,17 @@ pre code {
   width: 100%;
   /*height: calc(1.5em + 1.2625rem); existing*/
   height: 3.425rem;
-  padding: 0.6rem 0.75rem;
+  padding: 0 0.15rem;
   font-size: 1.125rem !important;
   line-height: 1.5;
   color: #424767;
   background-color: #ffffff;
   background-clip: padding-box;
-  border: 0.0625rem solid #edf0f7;
-  border-radius: 0.45rem;
+  border-bottom: 0.0625rem solid #B7C3D2;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-radius: 0;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
   transition: all 0.3s ease-in-out;
 
@@ -2960,7 +2963,7 @@ select.form-control:focus::-ms-value {
   padding: 0.375rem 0.75rem;
   font-size: 0.875rem;
   line-height: 1.5;
-  border-radius: 0.1rem;
+  /*border-radius: 0.1rem;*/
 }
 
 .form-control-lg {
@@ -2968,7 +2971,7 @@ select.form-control:focus::-ms-value {
   padding: 0.875rem 0.875rem;
   font-size: 1.125rem;
   line-height: 1.5;
-  border-radius: 0.45rem;
+/*  border-radius: 0.45rem;*/
 }
 
 select.form-control[size], select.form-control[multiple] {
@@ -2980,7 +2983,7 @@ textarea.form-control {
 }
 
 .form-group {
-  margin-bottom: 1rem;
+  margin-bottom: 1.75rem;
 }
 
 .form-text {
@@ -3857,7 +3860,7 @@ fieldset:disabled a.btn {
   color: #0d1b48;
   background-color: #f5f9fe;
   border-color: #f5f9fe;
-  box-shadow: 0 0 24px rgba(27, 22, 66, 0.04), 0 44px 74px rgba(27, 22, 66, 0.06);
+  /*box-shadow: 0 0 24px rgba(27, 22, 66, 0.04), 0 44px 74px rgba(27, 22, 66, 0.06);*/
 }
 
 .btn-soft:hover {
@@ -3870,7 +3873,7 @@ fieldset:disabled a.btn {
   color: #0d1b48;
   background-color: #d2e4fb;
   border-color: #c7ddf9;
-  box-shadow: 0 0 24px rgba(27, 22, 66, 0.04), 0 44px 74px rgba(27, 22, 66, 0.06), 0 0 0 0.25rem rgba(210, 216, 227, 0.5);
+  /*box-shadow: 0 0 24px rgba(27, 22, 66, 0.04), 0 44px 74px rgba(27, 22, 66, 0.06), 0 0 0 0.25rem rgba(210, 216, 227, 0.5);*/
 }
 
 .btn-soft.disabled, .btn-soft:disabled {
@@ -3888,7 +3891,7 @@ fieldset:disabled a.btn {
 
 .btn-soft:not(:disabled):not(.disabled):active:focus, .btn-soft:not(:disabled):not(.disabled).active:focus,
 .show > .btn-soft.dropdown-toggle:focus {
-  box-shadow: 0 0 0 0.25rem rgba(210, 216, 227, 0.5);
+ /* box-shadow: 0 0 0 0.25rem rgba(210, 216, 227, 0.5);*/
 }
 
 .btn-black {
@@ -6691,7 +6694,7 @@ input[type="button"].btn-block {
   padding: 0.875rem 0.875rem;
   font-size: 1.125rem;
   line-height: 1.5;
-  border-radius: 0.45rem;
+  /*border-radius: 0.45rem;*/
 }
 
 .input-group-sm > .form-control:not(textarea),
@@ -22331,10 +22334,18 @@ button:focus {
   outline: 0;
 }
 
-label {
+label{
   font-weight: 400;
   font-size: 1rem !important;
   color: #0d1b48;
+}
+
+.label {
+  font-weight: 400;
+  font-size: 1rem !important;
+  color: #0d1b48;
+  display: block;
+  padding-bottom: 0.75rem !important;
 }
 
 /**
@@ -32314,7 +32325,7 @@ button.section-github:focus {
   color: #0d1b48;
   background-color: #f5f9fe;
   border-color: #f5f9fe;
-  box-shadow: 0 0 24px rgba(27, 22, 66, 0.04), 0 44px 74px rgba(27, 22, 66, 0.06);
+  /*box-shadow: 0 0 24px rgba(27, 22, 66, 0.04), 0 44px 74px rgba(27, 22, 66, 0.06);*/
 }
 
 .btn-soft:hover {
@@ -32327,7 +32338,7 @@ button.section-github:focus {
   color: #0d1b48;
   background-color: #b6d3f8;
   border-color: #b6d3f8;
-  box-shadow: 0 0 24px rgba(27, 22, 66, 0.04), 0 44px 74px rgba(27, 22, 66, 0.06), 0 0 0 0.25rem rgba(210, 216, 227, 0.5);
+  /*box-shadow: 0 0 24px rgba(27, 22, 66, 0.04), 0 44px 74px rgba(27, 22, 66, 0.06), 0 0 0 0.25rem rgba(210, 216, 227, 0.5);*/
 }
 
 .btn-soft.disabled, .btn-soft:disabled {
@@ -32345,7 +32356,7 @@ button.section-github:focus {
 
 .btn-soft:not(:disabled):not(.disabled):active:focus, .btn-soft:not(:disabled):not(.disabled).active:focus,
 .show > .btn-soft.dropdown-toggle:focus {
-  box-shadow: 0 0 0 0.25rem rgba(210, 216, 227, 0.5);
+  /*box-shadow: 0 0 0 0.25rem rgba(210, 216, 227, 0.5);*/
 }
 
 .btn-black {
@@ -34992,7 +35003,7 @@ label {
 
 .form-control {
   font-size: 1rem;
-  border-radius: 0.45rem;
+  /*border-radius: 0.45rem;*/
   box-shadow: none;
 }
 
@@ -35061,7 +35072,7 @@ textarea[resize="horizontal"] {
   padding: 0.875rem 0.875rem;
   line-height: 1.5;
   font-size: 1.125rem;
-  border-radius: 0.45rem;
+  /*border-radius: 0.45rem;*/
 }
 
 .form-check {

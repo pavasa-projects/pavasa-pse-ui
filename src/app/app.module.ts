@@ -22,6 +22,7 @@ import { PostPropertyComponent } from './post-property/post-property.component';
 import { LoginComponent } from './login/login.component';
 import { PostPropertyDetailsComponent } from './post-property/post-property-details/post-property-details.component';
 import { PostPropertyLocationComponent } from './post-property/post-property-location/post-property-location.component';
+import { PostPropertyRentComponent } from './post-property/post-property-rent/post-property-rent.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { PostPropertyLocationComponent } from './post-property/post-property-loc
     PostPropertyComponent,
     LoginComponent,
     PostPropertyDetailsComponent,
-    PostPropertyLocationComponent
+    PostPropertyLocationComponent,
+    PostPropertyRentComponent
   ],
   imports: [
     BrowserModule,

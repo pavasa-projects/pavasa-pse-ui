@@ -9,6 +9,7 @@ import {PropertyLocationComponent} from './property-details/property-location/pr
 import {PostPropertyComponent} from './post-property/post-property.component';
 import {PostPropertyDetailsComponent} from './post-property/post-property-details/post-property-details.component';
 import {PostPropertyLocationComponent} from './post-property/post-property-location/post-property-location.component';
+import {PostPropertyRentComponent} from './post-property/post-property-rent/post-property-rent.component';
 
 const routes: Routes = [
   {path: 'property-search', component: PropertySearchComponent},
@@ -24,6 +25,7 @@ const routes: Routes = [
   {path: 'post-property', component: PostPropertyComponent},
   {path: 'post-property-details', component: PostPropertyDetailsComponent},
   {path: 'post-property-location', component: PostPropertyLocationComponent},
+  {path: 'post-property-rent', component: PostPropertyRentComponent},
   {path: '', component: PropertySearchComponent}
 ];
 

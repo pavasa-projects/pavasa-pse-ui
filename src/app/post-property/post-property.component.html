@@ -7,21 +7,20 @@
 
           <form action="#" method="post" [formGroup]="form" class="card border-light p-4 p-lg-5 mb-4">
             <h2 class="pb-3 border-bottom border-gray-500">Rent your property on Spaces</h2>
-            <p class="lead mt-3 ">You are posting property on <span class="font-weight-bold">India's trusted site</span>.
+            <p class="lead mt-1">You are posting property on <span class="font-weight-bold">India's trusted site</span>.
               Only individual owners are allow to post property.</p>
 
-            <h1 class="h5 mb-4 mt-2">Your Details</h1>
             <div class="row">
               <div class="col-12 col-lg-7">
-                <div class="form-group">
-                  <label for="name" class="h5">Your name</label>
+                <div class="form-group pt-4">
+                  <label for="name">Your name</label>
                   <div class="input-group mb-4">
                     <input class="form-control" ngbAutofocus id="name" placeholder="Enter your name"
                            type="text" aria-label="your name">
                   </div>
                 </div>
 
-                <div class="col">
+                <div class="form-group pt-4">
                   <button [routerLink]="['/post-property-details']" class="btn-lg btn-block btn-secondary mt-2 animate-up-2"
                           type="submit">Login & Post your property
                   </button>

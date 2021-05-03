@@ -17,6 +17,7 @@ export class FormComponent implements OnInit {
   bedrooms = [];
   balconies = [];
   bathrooms = [];
+  floorNumbers = [];
 
   public form: FormGroup;
 
@@ -42,14 +43,12 @@ export class FormComponent implements OnInit {
       {item_id: 5, item_text: '4+ BHK'}
     ];
 
-    this.bedrooms = ['1', '2', '3', '4', '5', '6', '7', '7+'];
+    this.bedrooms = ['1', '2', '3', '4', '5', '6+'];
 
-    this.balconies = ['0', '1', '2', '3', '4', '4+'];
-    this.bathrooms = ['1', '2', '3', '4', '4+'];
-    /*this.selectedItems = [
-      {item_id: 3, item_text: 'Pune'},
-      {item_id: 4, item_text: 'Navsari'}
-    ];*/
+    this.balconies = ['0', '1', '2', '3', '4', '5+'];
+    this.bathrooms = ['1', '2', '3', '4', '5+'];
+
+    this.floorNumbers = [...Array(150)].map((_, i) => i);
     this.dropdownSettings = {
       singleSelection: false,
       idField: 'item_id',
