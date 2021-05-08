@@ -18,7 +18,7 @@ export class PostPropertyDetailsComponent extends FormComponent implements OnIni
       typeOfProperty: ['', [Validators.required]],
       subTypeOfProperty: ['', [Validators.required]],
       bhkType: '',
-      propertyTypes: ''
+      propertyTypes: 'ss'
     });
 
   }

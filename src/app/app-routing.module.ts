@@ -10,6 +10,9 @@ import {PostPropertyComponent} from './post-property/post-property.component';
 import {PostPropertyDetailsComponent} from './post-property/post-property-details/post-property-details.component';
 import {PostPropertyLocationComponent} from './post-property/post-property-location/post-property-location.component';
 import {PostPropertyRentComponent} from './post-property/post-property-rent/post-property-rent.component';
+import {PostPropertyMoreDetailsComponent} from './post-property/post-property-more-details/post-property-more-details.component';
+import {PostPropertyPhotosComponent} from './post-property/post-property-photos/post-property-photos.component';
+import {PostPropertyFurnishingComponent} from './post-property/post-property-furnishing/post-property-furnishing.component';
 
 const routes: Routes = [
   {path: 'property-search', component: PropertySearchComponent},
@@ -26,11 +29,14 @@ const routes: Routes = [
   {path: 'post-property-details', component: PostPropertyDetailsComponent},
   {path: 'post-property-location', component: PostPropertyLocationComponent},
   {path: 'post-property-rent', component: PostPropertyRentComponent},
+  {path: 'post-property-more-details', component: PostPropertyMoreDetailsComponent},
+  {path: 'post-property-furnishing', component: PostPropertyFurnishingComponent},
+  {path: 'post-property-photos', component: PostPropertyPhotosComponent},
   {path: '', component: PropertySearchComponent}
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes,  {scrollPositionRestoration: 'enabled'})],
   exports: [RouterModule]
 })
 export class AppRoutingModule {

@@ -35151,7 +35151,7 @@ textarea[resize="horizontal"] {
   background-color: #edf0f7;
   border: 1px solid #B7C3D2;
   transition: all 0.2s ease;
-  border-radius: 0.85rem;
+ /* border-radius: 0.85rem;*/
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -40823,3 +40823,9 @@ label.text-white.btn {
 list-group.lis.display-block {
   display: block;
 }
+
+.ngb-dp-today {
+  background: yellow;
+}
+
+

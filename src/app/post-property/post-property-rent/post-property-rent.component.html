@@ -6,76 +6,37 @@
         <div class="col-12 col-lg-10">
 
           <form action="#" method="post" [formGroup]="form" class="card border-light p-4 p-lg-5 mb-4">
-            <h2 class="pb-3 border-bottom border-gray-500">Rent/Lease Details</h2>
-            <p class="lead mt-1">Tell us about Rent/Lease details.</p>
+            <h3>Step 2: Rent/Lease Details</h3>
+            <p class="lead ">Tell us about Rent/Lease details.</p>
 
             <div class="row">
               <div class="col-12 col-lg-7">
                 <div class="form-group pt-4">
-                  <label for="typeOfProperty">Property Type</label>
-                  <select class="form-control" id="typeOfProperty" formControlName="subTypeOfProperty">
-                    <option value="" disabled>Select Property Type</option>
-                    <option value="" disabled class="bg-soft">Residential Properties</option>
-                    <option *ngFor="let residentialType of residentialPropertyTypeList"
-                            [ngValue]="residentialType">{{residentialType}}</option>
-                    <option value="" disabled class="bg-soft">Commercial Properties</option>
-                    <option *ngFor="let commercialType of commercialPropertyTypeList"
-                            [ngValue]="commercialType.item_text">{{commercialType.item_text}}</option>
-                  </select>
+                  <label for="monthlyRent">Monthly Rent</label>
+                  <div class="input-group mb-4">
+                    <input class="form-control" ngbAutofocus id="monthlyRent" placeholder="Monthly Rent"
+                           type="text" aria-label="your name">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="securityAmount">Security Amount</label>
+                  <div class="input-group mb-4">
+                    <input class="form-control" ngbAutofocus id="securityAmount" placeholder="Security Amount"
+                           type="text" aria-label="your name">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="maintenanceCharges">Monthly Maintenance Charges</label>
+                  <div class="input-group mb-4">
+                    <input class="form-control" ngbAutofocus id="maintenanceCharges" placeholder="Maintenance Charges if any"
+                           type="text" aria-label="your name">
+                  </div>
                 </div>
 
-                <div class="form-group">
-                  <div class="label">Number of Bedrooms</div>
-                  <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic"
-                       formControlName="typeOfProperty">
-                    <label ngbButtonLabel
-                           class="btn-soft border-gray-500 border-top-left-radius-0 border-top-right-radius-0 border-bottom-left-radius-0 border-bottom-right-radius-0 mr-2"
-                           *ngFor="let bedroom of bedrooms">
-                      <input ngbButton type="radio" [value]="bedroom"> {{bedroom}}
-                    </label>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <div class="label ">Number of Balconies</div>
-                  <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic"
-                       formControlName="typeOfProperty">
-                    <label ngbButtonLabel
-                           class="btn-soft border-gray-500  border-top-left-radius-0 border-top-right-radius-0 border-bottom-left-radius-0 border-bottom-right-radius-0 mr-2"
-                           *ngFor="let balcony of balconies">
-                      <input ngbButton type="radio" [value]="balcony"> {{balcony}}
-                    </label>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <div class="label">Bathrooms</div>
-                  <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic"
-                       formControlName="typeOfProperty">
-                    <label ngbButtonLabel
-                           class="btn-soft border-gray-500  border-top-left-radius-0 border-top-right-radius-0 border-bottom-left-radius-0 border-bottom-right-radius-0 mr-2"
-                           *ngFor="let bathroom of bathrooms">
-                      <input ngbButton type="radio" [value]="bathroom"> {{bathroom}}
-                    </label>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label for="typeOfProperty">Floor Number</label>
-                  <select class="form-control" id="floorNumber" formControlName="subTypeOfProperty">
-                    <option value="" disabled>Select Floor</option>
-                    <option *ngFor="let floorNo of floorNumbers"
-                            [ngValue]="floorNo">{{floorNo}}</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label for="typeOfProperty">Total Floors</label>
-                  <select class="form-control" id="totalFloors" formControlName="subTypeOfProperty">
-                    <option value="" disabled>Select Floor</option>
-                    <option *ngFor="let floorNo of floorNumbers"
-                            [ngValue]="floorNo">{{floorNo}}</option>
-                  </select>
-                </div>
+
 
                 <div class="form-group pt-4">
-                  <button [routerLink]="['/post-property-location']" class="btn-lg btn-block btn-secondary mt-2 animate-up-2"
+                  <button [routerLink]="['/post-property-more-details']" class="btn-lg btn-block btn-secondary mt-2 animate-up-2"
                           type="submit">Next
                   </button>
                 </div>

@@ -6,7 +6,7 @@ import {HeadroomModule} from '@ctrl/ngx-headroom';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {AppRoutingModule} from './app-routing.module';
 import {PropertySearchComponent} from './property-search/property-search.component';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {NgbDateParserFormatter, NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {AutocompleteLocationComponent} from './common/autocomplete-location/autocomplete-location.component';
 import {GooglePlaceModule} from 'ngx-google-places-autocomplete';
@@ -23,6 +23,10 @@ import { LoginComponent } from './login/login.component';
 import { PostPropertyDetailsComponent } from './post-property/post-property-details/post-property-details.component';
 import { PostPropertyLocationComponent } from './post-property/post-property-location/post-property-location.component';
 import { PostPropertyRentComponent } from './post-property/post-property-rent/post-property-rent.component';
+import { PostPropertyMoreDetailsComponent } from './post-property/post-property-more-details/post-property-more-details.component';
+import { PostPropertyPhotosComponent } from './post-property/post-property-photos/post-property-photos.component';
+import { PostPropertyFurnishingComponent } from './post-property/post-property-furnishing/post-property-furnishing.component';
+import {NgbDateCustomParserFormatter} from './common/ngb-date-custom-parser-formatter.service';
 
 @NgModule({
   declarations: [
@@ -39,7 +43,10 @@ import { PostPropertyRentComponent } from './post-property/post-property-rent/po
     LoginComponent,
     PostPropertyDetailsComponent,
     PostPropertyLocationComponent,
-    PostPropertyRentComponent
+    PostPropertyRentComponent,
+    PostPropertyMoreDetailsComponent,
+    PostPropertyPhotosComponent,
+    PostPropertyFurnishingComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +60,7 @@ import { PostPropertyRentComponent } from './post-property/post-property-rent/po
     FormsModule,
     NgxGalleryModule
   ],
-  providers: [],
+  providers: [{ provide: NgbDateParserFormatter, useClass: NgbDateCustomParserFormatter }  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

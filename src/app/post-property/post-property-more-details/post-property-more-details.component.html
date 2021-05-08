@@ -1,0 +1,100 @@
+<main>
+
+  <div class="section bg-soft">
+    <div class="container">
+      <div class="row pt-5 pt-lg-3">
+        <div class="col-12 col-lg-10">
+
+          <form action="#" method="post" [formGroup]="form" class="card border-light p-4 p-lg-5 mb-4">
+            <h3>Step 3: More Property Details</h3>
+            <p class="lead ">Tell us more about your property.</p>
+
+            <div class="row">
+              <div class="col-12 col-lg-7">
+                <div class="form-group pt-4">
+                  <label for="carpetArea">Carpet Area (Sq-Ft)</label>
+                  <div class="input-group mb-4">
+                    <input class="form-control" ngbAutofocus id="carpetArea" placeholder="Carpet Area in sq. ft"
+                           type="text" aria-label="your name">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="availableFrom">Available From</label>
+
+                  <!--<input class="form-control" placeholder="yyyy-mm-dd" id="availableFrom"
+                         name="availableFrom" [(ngModel)]="dateModel" ngbDatepicker #d="ngbDatepicker">
+                  <div class="input-group-append">
+                    <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button">  sdfsdf</button>
+                  </div>-->
+                  <div class="input-group mb-lg-0">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><span class="far fa-calendar-alt"></span></span>
+                    </div>
+                    <input class="form-control datepicker" id="availableFrom" [(ngModel)]="dateModel" [ngModelOptions]="{standalone: true}" ngbDatepicker
+                           #d="ngbDatepicker" (click)="d.toggle()" placeholder="DD/MM/YYYY" type="text"
+                           data-position="top">
+                  </div>
+
+                </div>
+                <div class="form-group">
+                  <div class="label">Furnishing Status</div>
+                  <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic">
+                    <label ngbButtonLabel
+                           class="btn-soft border-gray-500 border-top-left-radius-0 border-top-right-radius-0 border-bottom-left-radius-0 border-bottom-right-radius-0 mr-2"
+                           *ngFor="let furnishingStatus of CONSTANTS.furnishingStatuses">
+                      <input ngbButton type="radio" [value]="furnishingStatus"> {{furnishingStatus}}
+                    </label>
+                  </div>
+                </div>
+
+
+                <div class="form-group">
+                  <div class="label">Furnishing Details</div>
+                  <ul id="furnishings" class=" list-group list-group list-group-flush  border-0">
+                    <li class="list-group-item border-0 py-1 px-0 d-flex align-items-center justify-content-between" *ngFor="let furnishing of CONSTANTS.furnishings">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" [value]="furnishing" [id]="furnishing">
+                        <label class="form-check-label" [htmlFor]="furnishing">
+                          {{furnishing}}
+                        </label>
+                      </div>
+                    </li>
+
+                  </ul>
+                </div>
+
+                <div class="form-group">
+                  <div class="label">Amenities</div>
+                  <ul id="amenities" class=" list-group list-group list-group-flush  border-0">
+                    <li class="list-group-item border-0 py-1 px-0 d-flex align-items-center justify-content-between" *ngFor="let amenity of CONSTANTS.amenities">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" [value]="amenity" [id]="amenity">
+                        <label class="form-check-label" [htmlFor]="amenity">
+                          {{amenity}}
+                        </label>
+                      </div>
+                    </li>
+
+                  </ul>
+                </div>
+
+
+
+                <div class="form-group pt-4">
+                  <button [routerLink]="['/post-property-photos']"
+                          class="btn-lg btn-block btn-secondary mt-2 animate-up-2"
+                          type="submit">Next
+                  </button>
+                </div>
+              </div>
+            </div>
+
+
+          </form>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
