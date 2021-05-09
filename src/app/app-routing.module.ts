@@ -30,7 +30,6 @@ const routes: Routes = [
   {path: 'post-property-location', component: PostPropertyLocationComponent},
   {path: 'post-property-rent', component: PostPropertyRentComponent},
   {path: 'post-property-more-details', component: PostPropertyMoreDetailsComponent},
-  {path: 'post-property-furnishing', component: PostPropertyFurnishingComponent},
   {path: 'post-property-photos', component: PostPropertyPhotosComponent},
   {path: '', component: PropertySearchComponent}
 ];

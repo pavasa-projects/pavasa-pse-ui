@@ -5,8 +5,13 @@
       <div class="row pt-5 pt-lg-3">
         <div class="col-12 col-lg-10">
 
-          <form action="#" method="post" [formGroup]="form" class="card border-light p-4 p-lg-5 mb-4">
-            <h3>Step 2: Rent/Lease Details</h3>
+          <form action="#" method="post" [formGroup]="form" class="card border-light p-4 p-lg-5">
+            <div class="form-group ">
+              <a [routerLink]="['/post-property-location']" class="text-secondary font-small"
+                      ><i class="fas fa-arrow-left fa-lg"></i> <span class="pl-3 fa-lg font-weight-bold">Back</span>
+              </a>
+            </div>
+            <h3>Step 3: Rent/Lease Details</h3>
             <p class="lead ">Tell us about Rent/Lease details.</p>
 
             <div class="row">

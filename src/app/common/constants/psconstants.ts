@@ -25,5 +25,7 @@ export const PS_CONSTANTS = {
     'TV',
     'Microwave',
     'Dinning Table',
-  ]
+  ],
+
+  tenantTypes : ['Family', 'Bachelors', 'Both']
 };

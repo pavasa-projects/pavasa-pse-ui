@@ -6,7 +6,12 @@
         <div class="col-12 col-lg-10">
 
           <form action="#" method="post" [formGroup]="form" class="card border-light p-4 p-lg-5 mb-4">
-            <h3>Step 3: More Property Details</h3>
+            <div class="form-group ">
+              <a [routerLink]="['/post-property-rent']" class="text-secondary font-small"
+              ><i class="fas fa-arrow-left fa-lg"></i> <span class="pl-3 fa-lg font-weight-bold">Back</span>
+              </a>
+            </div>
+            <h3>Step 4: More Property Details</h3>
             <p class="lead ">Tell us more about your property.</p>
 
             <div class="row">
@@ -36,6 +41,17 @@
                   </div>
 
                 </div>
+                <div class="form-group">
+                  <div class="label">Preferred Tenant Type</div>
+                  <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic">
+                    <label ngbButtonLabel
+                           class="btn-soft border-gray-500 border-top-left-radius-0 border-top-right-radius-0 border-bottom-left-radius-0 border-bottom-right-radius-0 mr-2"
+                           *ngFor="let tenantType of CONSTANTS.tenantTypes">
+                      <input ngbButton type="radio" [value]="tenantType"> {{tenantType}}
+                    </label>
+                  </div>
+                </div>
+
                 <div class="form-group">
                   <div class="label">Furnishing Status</div>
                   <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic">

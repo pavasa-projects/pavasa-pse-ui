@@ -5,16 +5,27 @@
       <div class="row pt-5 pt-lg-3">
         <div class="col-12 col-lg-10">
 
-          <form action="#" method="post" [formGroup]="form" class="card border-light p-4 p-lg-5 mb-4">
-            <h1 class="h5 mb-4 mt-2">Property Location</h1>
-            <div class="form-group form-group-lg mb-lg-0">
-              <app-autocomplete-location></app-autocomplete-location>
+          <form action="#" method="post" [formGroup]="form" class="card border-light p-4 p-lg-5">
+            <div class="form-group ">
+              <a [routerLink]="['/post-property-details']" class="text-secondary font-small"
+              ><i class="fas fa-arrow-left fa-lg"></i> <span class="pl-3 fa-lg font-weight-bold">Back</span>
+              </a>
             </div>
+            <h3>Step 2: Property Location</h3>
+            <p class="lead ">Tell us property location.</p>
             <div class="row">
-              <div class="col">
-                <button class="btn btn-primary btn-dark mt-2 animate-up-2"
-                        type="submit">Next
-                </button>
+              <div class="col-12 col-lg-7">
+
+                <div class="form-group mb-lg-0">
+                  <app-autocomplete-location></app-autocomplete-location>
+                </div>
+
+                <div class="form-group pt-4">
+                  <button [routerLink]="['/post-property-rent']"
+                          class="btn-lg btn-block btn-secondary mt-2 animate-up-2"
+                          type="submit">Next
+                  </button>
+                </div>
               </div>
             </div>
           </form>

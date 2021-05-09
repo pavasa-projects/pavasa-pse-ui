@@ -74,8 +74,31 @@
                   </select>
                 </div>
 
+                <div class="form-group">
+                  <div class="label">Covered Parking</div>
+                  <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic"
+                       formControlName="typeOfProperty">
+                    <label ngbButtonLabel
+                           class="btn-soft border-gray-500  border-top-left-radius-0 border-top-right-radius-0 border-bottom-left-radius-0 border-bottom-right-radius-0 mr-2"
+                           *ngFor="let coveredParking of balconies">
+                      <input ngbButton type="radio" [value]="coveredParking"> {{coveredParking}}
+                    </label>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <div class="label">Open Parking</div>
+                  <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic"
+                       formControlName="typeOfProperty">
+                    <label ngbButtonLabel
+                           class="btn-soft border-gray-500  border-top-left-radius-0 border-top-right-radius-0 border-bottom-left-radius-0 border-bottom-right-radius-0 mr-2"
+                           *ngFor="let openParking of balconies">
+                      <input ngbButton type="radio" [value]="openParking"> {{openParking}}
+                    </label>
+                  </div>
+                </div>
                 <div class="form-group pt-4">
-                  <button [routerLink]="['/post-property-rent']" class="btn-lg btn-block btn-secondary mt-2 animate-up-2"
+                  <button [routerLink]="['/post-property-location']" class="btn-lg btn-block btn-secondary mt-2 animate-up-2"
                           type="submit">Next
                   </button>
                 </div>
