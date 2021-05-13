@@ -27,6 +27,10 @@ import { PostPropertyMoreDetailsComponent } from './post-property/post-property-
 import { PostPropertyPhotosComponent } from './post-property/post-property-photos/post-property-photos.component';
 import { PostPropertyFurnishingComponent } from './post-property/post-property-furnishing/post-property-furnishing.component';
 import {NgbDateCustomParserFormatter} from './common/ngb-date-custom-parser-formatter.service';
+import { PostPropertyPricingPlanComponent } from './post-property/post-property-pricing-plan/post-property-pricing-plan.component';
+import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
+import { MyPropertiesComponent } from './user-dashboard/my-properties/my-properties.component';
+import { MyAccountComponent } from './user-dashboard/my-account/my-account.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +50,11 @@ import {NgbDateCustomParserFormatter} from './common/ngb-date-custom-parser-form
     PostPropertyRentComponent,
     PostPropertyMoreDetailsComponent,
     PostPropertyPhotosComponent,
-    PostPropertyFurnishingComponent
+    PostPropertyFurnishingComponent,
+    PostPropertyPricingPlanComponent,
+    UserDashboardComponent,
+    MyPropertiesComponent,
+    MyAccountComponent
   ],
   imports: [
     BrowserModule,

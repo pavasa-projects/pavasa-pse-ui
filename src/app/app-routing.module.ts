@@ -13,6 +13,10 @@ import {PostPropertyRentComponent} from './post-property/post-property-rent/post
 import {PostPropertyMoreDetailsComponent} from './post-property/post-property-more-details/post-property-more-details.component';
 import {PostPropertyPhotosComponent} from './post-property/post-property-photos/post-property-photos.component';
 import {PostPropertyFurnishingComponent} from './post-property/post-property-furnishing/post-property-furnishing.component';
+import {PostPropertyPricingPlanComponent} from './post-property/post-property-pricing-plan/post-property-pricing-plan.component';
+import {UserDashboardComponent} from './user-dashboard/user-dashboard.component';
+import {MyAccountComponent} from './user-dashboard/my-account/my-account.component';
+import {MyPropertiesComponent} from './user-dashboard/my-properties/my-properties.component';
 
 const routes: Routes = [
   {path: 'property-search', component: PropertySearchComponent},
@@ -31,11 +35,19 @@ const routes: Routes = [
   {path: 'post-property-rent', component: PostPropertyRentComponent},
   {path: 'post-property-more-details', component: PostPropertyMoreDetailsComponent},
   {path: 'post-property-photos', component: PostPropertyPhotosComponent},
+  {path: 'post-property-pricing-plan', component: PostPropertyPricingPlanComponent},
+  {
+    path: 'user-dashboard', component: UserDashboardComponent, children: [
+      {path: '', redirectTo: 'my-properties', pathMatch: 'full'},
+      {path: 'my-properties', component: MyPropertiesComponent},
+      {path: 'my-account', component: MyAccountComponent}
+    ]
+  },
   {path: '', component: PropertySearchComponent}
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes,  {scrollPositionRestoration: 'enabled'})],
+  imports: [RouterModule.forRoot(routes, {scrollPositionRestoration: 'enabled'})],
   exports: [RouterModule]
 })
 export class AppRoutingModule {
