@@ -18,19 +18,22 @@ import {PropertyAboutComponent} from './property-details/property-about/property
 import {PropertyAmenitiesComponent} from './property-details/property-amenities/property-amenities.component';
 import {PropertyLocationComponent} from './property-details/property-location/property-location.component';
 import {NgxGalleryModule} from 'ngx-gallery-9';
-import { PostPropertyComponent } from './post-property/post-property.component';
-import { LoginComponent } from './login/login.component';
-import { PostPropertyDetailsComponent } from './post-property/post-property-details/post-property-details.component';
-import { PostPropertyLocationComponent } from './post-property/post-property-location/post-property-location.component';
-import { PostPropertyRentComponent } from './post-property/post-property-rent/post-property-rent.component';
-import { PostPropertyMoreDetailsComponent } from './post-property/post-property-more-details/post-property-more-details.component';
-import { PostPropertyPhotosComponent } from './post-property/post-property-photos/post-property-photos.component';
-import { PostPropertyFurnishingComponent } from './post-property/post-property-furnishing/post-property-furnishing.component';
+import {PostPropertyComponent} from './post-property/post-property.component';
+import {LoginComponent} from './login/login.component';
+import {PostPropertyDetailsComponent} from './post-property/post-property-details/post-property-details.component';
+import {PostPropertyLocationComponent} from './post-property/post-property-location/post-property-location.component';
+import {PostPropertyRentComponent} from './post-property/post-property-rent/post-property-rent.component';
+import {PostPropertyMoreDetailsComponent} from './post-property/post-property-more-details/post-property-more-details.component';
+import {PostPropertyPhotosComponent} from './post-property/post-property-photos/post-property-photos.component';
+import {PostPropertyFurnishingComponent} from './post-property/post-property-furnishing/post-property-furnishing.component';
 import {NgbDateCustomParserFormatter} from './common/ngb-date-custom-parser-formatter.service';
-import { PostPropertyPricingPlanComponent } from './post-property/post-property-pricing-plan/post-property-pricing-plan.component';
-import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
-import { MyPropertiesComponent } from './user-dashboard/my-properties/my-properties.component';
-import { MyAccountComponent } from './user-dashboard/my-account/my-account.component';
+import {PostPropertyPricingPlanComponent} from './post-property/post-property-pricing-plan/post-property-pricing-plan.component';
+import {UserDashboardComponent} from './user-dashboard/user-dashboard.component';
+import {MyPropertiesComponent} from './user-dashboard/my-properties/my-properties.component';
+import {MyAccountComponent} from './user-dashboard/my-account/my-account.component';
+import {StoreModule} from '@ngrx/store';
+import {propertyReducer} from './state/property/property.reducer';
+import {PostPropertyModule} from './post-property/post-property.module';
 
 @NgModule({
   declarations: [
@@ -66,9 +69,11 @@ import { MyAccountComponent } from './user-dashboard/my-account/my-account.compo
     GooglePlaceModule,
     NgMultiSelectDropDownModule.forRoot(),
     FormsModule,
-    NgxGalleryModule
+    NgxGalleryModule,
+    PostPropertyModule,
+    StoreModule.forRoot({})
   ],
-  providers: [{ provide: NgbDateParserFormatter, useClass: NgbDateCustomParserFormatter }  ],
+  providers: [{provide: NgbDateParserFormatter, useClass: NgbDateCustomParserFormatter}],
   bootstrap: [AppComponent]
 })
 export class AppModule {
