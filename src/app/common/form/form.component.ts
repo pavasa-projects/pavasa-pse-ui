@@ -3,10 +3,11 @@ import {IDropdownSettings} from 'ng-multiselect-dropdown';
 import {FormGroup} from '@angular/forms';
 import {PS_CONSTANTS} from '../constants/psconstants';
 import {Property} from '../../model/property';
-import {setCurrentProperty} from '../../state/property/property.state.actions';
+import {setCurrentProperty} from '../../state/property/actions/property.state.actions';
 import {Store} from '@ngrx/store';
 import {AppState} from '../../state/app.state';
 import {getCurrentProperty} from '../../state/property/property.reducer';
+import {PropertyStateActions} from '../../state/property/actions';
 
 @Component({
   selector: 'app-form',
@@ -48,6 +49,7 @@ export abstract class FormComponent implements OnInit {
     this.store.select(getCurrentProperty).subscribe(
       property => {
         if (property) {
+          this.property = property;
           this.displayProperty(property);
         }
       }
@@ -68,7 +70,7 @@ export abstract class FormComponent implements OnInit {
     if (this.form.valid) {
       if (this.form.dirty) {
         const property: Property = {...originalProperty, ...this.form.value};
-        this.store.dispatch(setCurrentProperty({property}));
+        this.store.dispatch(PropertyStateActions.setCurrentProperty({property}));
       }
       this.navigateNextPageOnSuccess();
 

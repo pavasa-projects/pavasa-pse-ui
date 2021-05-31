@@ -4,7 +4,7 @@ import {FormBuilder, Validators} from '@angular/forms';
 import {Store} from '@ngrx/store';
 import {Router} from '@angular/router';
 import {AppState} from '../../state/app.state';
-import {setCurrentProperty} from '../../state/property/property.state.actions';
+import {setCurrentProperty} from '../../state/property/actions/property.state.actions';
 import {Property} from '../../model/property';
 import {getCurrentProperty} from '../../state/property/property.reducer';
 

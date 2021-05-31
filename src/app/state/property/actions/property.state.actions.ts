@@ -1,5 +1,5 @@
 import {createAction, props} from '@ngrx/store';
-import {Property} from '../../model/property';
+import {Property} from '../../../model/property';
 
 export enum PropertyActionTypes {
   SetCurrentProperty = 'Set current property',
