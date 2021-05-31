@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, Validators} from '@angular/forms';
 import {FormComponent} from '../common/form/form.component';
+import {Store} from '@ngrx/store';
+import {AppState} from '../state/app.state';
 
 @Component({
   selector: 'app-post-property',
@@ -10,8 +12,8 @@ import {FormComponent} from '../common/form/form.component';
 export class PostPropertyComponent extends FormComponent implements OnInit {
 
 
-  constructor(private fb: FormBuilder) {
-    super();
+  constructor(private fb: FormBuilder, store: Store<AppState>) {
+    super(store);
   }
 
   ngOnInit(): void {
@@ -22,6 +24,9 @@ export class PostPropertyComponent extends FormComponent implements OnInit {
       propertyTypes: ''
     });
 
+  }
+
+  navigateNextPageOnSuccess(): void {
   }
 
 }

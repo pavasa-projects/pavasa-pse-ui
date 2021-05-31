@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {ModalDismissReasons, NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {FormComponent} from './common/form/form.component';
+import {Store} from '@ngrx/store';
+import {AppState} from './state/app.state';
 
 @Component({
   selector: 'app-root',
@@ -14,8 +16,8 @@ export class AppComponent extends FormComponent implements OnInit {
   showOTPPage = false;
   showLoginPage = true;
 
-  constructor(private modalService: NgbModal) {
-    super();
+  constructor(private modalService: NgbModal, store: Store<AppState>) {
+    super(store);
   }
 
   ngOnInit(): void {
@@ -53,4 +55,6 @@ export class AppComponent extends FormComponent implements OnInit {
     this.showOTPPage = false;
   }
 
+  navigateNextPageOnSuccess(): void {
+  }
 }

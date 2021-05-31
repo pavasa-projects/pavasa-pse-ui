@@ -5,7 +5,7 @@
       <div class="row pt-5 pt-lg-3">
         <div class="col-12 col-lg-10">
 
-          <form action="#" method="post" [formGroup]="form" class="card border-light p-4 p-lg-5">
+          <form action="#" method="post" (ngSubmit)="onSave(property);" [formGroup]="form" class="card border-light p-4 p-lg-5">
             <div class="form-group ">
               <a [routerLink]="['/post-property-location']" class="text-secondary font-small"
                       ><i class="fas fa-arrow-left fa-lg"></i> <span class="pl-3 fa-lg font-weight-bold">Back</span>
@@ -20,28 +20,28 @@
                   <label for="monthlyRent">Monthly Rent</label>
                   <div class="input-group mb-4">
                     <input class="form-control" ngbAutofocus id="monthlyRent" placeholder="Monthly Rent"
-                           type="text" aria-label="your name">
+                           type="text"  formControlName="monthlyRent">
                   </div>
                 </div>
                 <div class="form-group">
                   <label for="securityAmount">Security Amount</label>
                   <div class="input-group mb-4">
                     <input class="form-control" ngbAutofocus id="securityAmount" placeholder="Security Amount"
-                           type="text" aria-label="your name">
+                           type="text"  formControlName="securityAmount">
                   </div>
                 </div>
                 <div class="form-group">
                   <label for="maintenanceCharges">Monthly Maintenance Charges</label>
                   <div class="input-group mb-4">
                     <input class="form-control" ngbAutofocus id="maintenanceCharges" placeholder="Maintenance Charges if any"
-                           type="text" aria-label="your name">
+                           type="text"  formControlName="maintenanceCharges">
                   </div>
                 </div>
 
 
 
                 <div class="form-group pt-4">
-                  <button [routerLink]="['/post-property-more-details']" class="btn-lg btn-block btn-secondary mt-2 animate-up-2"
+                  <button class="btn-lg btn-block btn-secondary mt-2 animate-up-2"
                           type="submit">Next
                   </button>
                 </div>

@@ -16,10 +16,10 @@
                   <select class="form-control" id="typeOfProperty" formControlName="subTypeOfProperty">
                     <option value="" disabled>Select Property Type</option>
                     <option value="" disabled class="bg-soft">Residential Properties</option>
-                    <option *ngFor="let residentialType of residentialPropertyTypeList"
+                    <option *ngFor="let residentialType of CONSTANTS.residentialPropertyTypeList"
                             [ngValue]="residentialType">{{residentialType}}</option>
                     <option value="" disabled class="bg-soft">Commercial Properties</option>
-                    <option *ngFor="let commercialType of commercialPropertyTypeList"
+                    <option *ngFor="let commercialType of CONSTANTS.commercialPropertyTypeList"
                             [ngValue]="commercialType.item_text">{{commercialType.item_text}}</option>
                   </select>
                 </div>
@@ -27,10 +27,10 @@
                 <div class="form-group">
                   <div class="label">Number of Bedrooms</div>
                   <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic"
-                       formControlName="typeOfProperty">
+                       formControlName="noOfBedrooms">
                     <label ngbButtonLabel
                            class="btn-soft border-gray-500 border-top-left-radius-0 border-top-right-radius-0 border-bottom-left-radius-0 border-bottom-right-radius-0 mr-2"
-                           *ngFor="let bedroom of bedrooms">
+                           *ngFor="let bedroom of CONSTANTS.bedrooms">
                       <input ngbButton type="radio" [value]="bedroom"> {{bedroom}}
                     </label>
                   </div>
@@ -38,10 +38,10 @@
                 <div class="form-group">
                   <div class="label ">Number of Balconies</div>
                   <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic"
-                       formControlName="typeOfProperty">
+                       formControlName="noOfBalconies">
                     <label ngbButtonLabel
                            class="btn-soft border-gray-500  border-top-left-radius-0 border-top-right-radius-0 border-bottom-left-radius-0 border-bottom-right-radius-0 mr-2"
-                           *ngFor="let balcony of balconies">
+                           *ngFor="let balcony of CONSTANTS.balconies">
                       <input ngbButton type="radio" [value]="balcony"> {{balcony}}
                     </label>
                   </div>
@@ -49,27 +49,27 @@
                 <div class="form-group">
                   <div class="label">Bathrooms</div>
                   <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic"
-                       formControlName="typeOfProperty">
+                       formControlName="noOfBathrooms">
                     <label ngbButtonLabel
                            class="btn-soft border-gray-500  border-top-left-radius-0 border-top-right-radius-0 border-bottom-left-radius-0 border-bottom-right-radius-0 mr-2"
-                           *ngFor="let bathroom of bathrooms">
+                           *ngFor="let bathroom of CONSTANTS.bathrooms">
                       <input ngbButton type="radio" [value]="bathroom"> {{bathroom}}
                     </label>
                   </div>
                 </div>
                 <div class="form-group">
                   <label for="typeOfProperty">Floor Number</label>
-                  <select class="form-control" id="floorNumber" formControlName="subTypeOfProperty">
+                  <select class="form-control" id="floorNumber" formControlName="floorNo">
                     <option value="" disabled>Select Floor</option>
-                    <option *ngFor="let floorNo of floorNumbers"
+                    <option *ngFor="let floorNo of CONSTANTS.floorNumbers"
                             [ngValue]="floorNo">{{floorNo}}</option>
                   </select>
                 </div>
                 <div class="form-group">
                   <label for="typeOfProperty">Total Floors</label>
-                  <select class="form-control" id="totalFloors" formControlName="subTypeOfProperty">
+                  <select class="form-control" id="totalFloors" formControlName="totalFloors">
                     <option value="" disabled>Select Floor</option>
-                    <option *ngFor="let floorNo of floorNumbers"
+                    <option *ngFor="let floorNo of CONSTANTS.floorNumbers"
                             [ngValue]="floorNo">{{floorNo}}</option>
                   </select>
                 </div>
@@ -77,10 +77,10 @@
                 <div class="form-group">
                   <div class="label">Covered Parking</div>
                   <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic"
-                       formControlName="typeOfProperty">
+                       formControlName="noOfCoveredParking">
                     <label ngbButtonLabel
                            class="btn-soft border-gray-500  border-top-left-radius-0 border-top-right-radius-0 border-bottom-left-radius-0 border-bottom-right-radius-0 mr-2"
-                           *ngFor="let coveredParking of balconies">
+                           *ngFor="let coveredParking of CONSTANTS.balconies">
                       <input ngbButton type="radio" [value]="coveredParking"> {{coveredParking}}
                     </label>
                   </div>
@@ -89,10 +89,10 @@
                 <div class="form-group">
                   <div class="label">Open Parking</div>
                   <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic"
-                       formControlName="typeOfProperty">
+                       formControlName="noOfOpenParking">
                     <label ngbButtonLabel
                            class="btn-soft border-gray-500  border-top-left-radius-0 border-top-right-radius-0 border-bottom-left-radius-0 border-bottom-right-radius-0 mr-2"
-                           *ngFor="let openParking of balconies">
+                           *ngFor="let openParking of CONSTANTS.balconies">
                       <input ngbButton type="radio" [value]="openParking"> {{openParking}}
                     </label>
                   </div>

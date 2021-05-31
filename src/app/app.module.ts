@@ -41,7 +41,6 @@ import {PostPropertyModule} from './post-property/post-property.module';
     PropertySearchComponent,
     AutocompleteLocationComponent,
     SearchResultComponent,
-    FormComponent,
     PropertyDetailsComponent,
     PropertyAboutComponent,
     PropertyAmenitiesComponent,

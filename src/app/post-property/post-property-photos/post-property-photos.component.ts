@@ -7,10 +7,10 @@ import {FormComponent} from '../../common/form/form.component';
   templateUrl: './post-property-photos.component.html',
   styleUrls: ['./post-property-photos.component.css']
 })
-export class PostPropertyPhotosComponent  extends FormComponent implements OnInit {
+export class PostPropertyPhotosComponent   implements OnInit {
 
   constructor(private fb: FormBuilder) {
-    super();
+    // super();
   }
 
   ngOnInit(): void {

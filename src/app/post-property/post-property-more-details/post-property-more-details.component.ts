@@ -2,7 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {FormComponent} from '../../common/form/form.component';
 import {FormBuilder, Validators} from '@angular/forms';
 import {NgbDatepickerConfig, NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
-import { PS_CONSTANTS } from '../../common/constants/psconstants';
+import {Store} from '@ngrx/store';
+import {AppState} from '../../state/app.state';
 
 
 @Component({
@@ -12,10 +13,9 @@ import { PS_CONSTANTS } from '../../common/constants/psconstants';
 })
 export class PostPropertyMoreDetailsComponent extends FormComponent implements OnInit {
   dateModel: NgbDateStruct;
-  readonly CONSTANTS = PS_CONSTANTS;
 
-  constructor(private fb: FormBuilder, private config: NgbDatepickerConfig) {
-    super();
+  constructor(private fb: FormBuilder, private config: NgbDatepickerConfig, store: Store<AppState>) {
+    super(store);
     const current = new Date();
     config.minDate = {
       year: current.getFullYear(), month:
@@ -31,5 +31,8 @@ export class PostPropertyMoreDetailsComponent extends FormComponent implements O
       bhkType: '',
       propertyTypes: ''
     });
+  }
+
+  navigateNextPageOnSuccess(): void {
   }
 }

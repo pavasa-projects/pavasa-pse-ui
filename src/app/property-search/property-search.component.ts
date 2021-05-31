@@ -2,6 +2,8 @@ import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import {IDropdownSettings} from 'ng-multiselect-dropdown';
 import {FormComponent} from '../common/form/form.component';
+import {Store} from '@ngrx/store';
+import {AppState} from '../state/app.state';
 
 
 @Component({
@@ -12,8 +14,8 @@ import {FormComponent} from '../common/form/form.component';
 export class PropertySearchComponent extends FormComponent implements OnInit {
 
 
-  constructor(private fb: FormBuilder) {
-    super();
+  constructor(private fb: FormBuilder, store: Store<AppState>) {
+    super(store);
   }
 
   ngOnInit(): void {
@@ -33,4 +35,6 @@ export class PropertySearchComponent extends FormComponent implements OnInit {
     console.log(items);
   }
 
+  navigateNextPageOnSuccess(): void {
+  }
 }

@@ -1,41 +1,26 @@
 import {Component, OnInit} from '@angular/core';
 import {IDropdownSettings} from 'ng-multiselect-dropdown';
 import {FormGroup} from '@angular/forms';
+import {PS_CONSTANTS} from '../constants/psconstants';
+import {Property} from '../../model/property';
+import {setCurrentProperty} from '../../state/property/property.state.actions';
+import {Store} from '@ngrx/store';
+import {AppState} from '../../state/app.state';
+import {getCurrentProperty} from '../../state/property/property.reducer';
 
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.css']
 })
-export class FormComponent implements OnInit {
-
+export abstract class FormComponent implements OnInit {
+  property: Property;
+  readonly CONSTANTS = PS_CONSTANTS;
   dropdownList = [];
-  propertyTypeList = [];
-  commercialPropertyTypeList = [];
-  residentialPropertyTypeList = ['cc', 'ddd'];
   dropdownSettings: IDropdownSettings = {};
-  bedrooms = [];
-  balconies = [];
-  bathrooms = [];
-  floorNumbers = [];
-  furnishingStatuses = [];
-
   public form: FormGroup;
 
-
-  constructor() {
-    this.propertyTypeList = ['Residential', 'Commercial'];
-    this.residentialPropertyTypeList = ['cc', 'ddd'];
-    this.commercialPropertyTypeList = [
-      {item_id: 'Office space', item_text: 'Office space'},
-      {item_id: 'Co-working', item_text: 'Co-working'},
-      {item_id: 'Restaurant/Cafe', item_text: 'Restaurant/Cafe'},
-      {item_id: 'Shop/Showroom', item_text: 'Shop/Showroom'},
-      {item_id: 'Industrial building', item_text: 'Industrial building'},
-      {item_id: 'Industrial Shed', item_text: 'Industrial Shed'},
-      {item_id: 'Godown/Warehouse', item_text: 'Godown/Warehouse'}
-    ];
-
+  protected constructor(protected store: Store<AppState>) {
     this.dropdownList = [
       {item_id: 1, item_text: '1 BHK'},
       {item_id: 2, item_text: '2 BHK'},
@@ -43,14 +28,6 @@ export class FormComponent implements OnInit {
       {item_id: 4, item_text: '4 BHK'},
       {item_id: 5, item_text: '4+ BHK'}
     ];
-
-    this.bedrooms = ['1', '2', '3', '4', '5', '6+'];
-
-    this.balconies = ['0', '1', '2', '3', '4', '5+'];
-    this.bathrooms = ['1', '2', '3', '4', '5+'];
-
-    this.floorNumbers = [...Array(150)].map((_, i) => i);
-    this.furnishingStatuses = ['Furnished', 'Semi-Furnished', 'UnFurnished'];
     this.dropdownSettings = {
       singleSelection: false,
       idField: 'item_id',
@@ -66,6 +43,38 @@ export class FormComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.initFormFields();
+    // TODO: unscribe
+    this.store.select(getCurrentProperty).subscribe(
+      property => {
+        if (property) {
+          this.displayProperty(property);
+        }
+      }
+    );
   }
+
+  initFormFields(): void {
+  }
+
+  displayProperty(property: Property): void {
+    if (property) {
+      this.form.reset();
+      this.form.patchValue(property);
+    }
+  }
+
+  onSave(originalProperty: Property): void {
+    if (this.form.valid) {
+      if (this.form.dirty) {
+        const property: Property = {...originalProperty, ...this.form.value};
+        this.store.dispatch(setCurrentProperty({property}));
+      }
+      this.navigateNextPageOnSuccess();
+
+    }
+  }
+
+  abstract navigateNextPageOnSuccess(): void;
 
 }

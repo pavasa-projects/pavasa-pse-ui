@@ -15,52 +15,31 @@ import {getCurrentProperty} from '../../state/property/property.reducer';
 })
 export class PostPropertyDetailsComponent extends FormComponent implements OnInit, OnDestroy {
 
-  constructor(private fb: FormBuilder, private store: Store<AppState>, private router: Router) {
-    super();
+  constructor(private fb: FormBuilder, store: Store<AppState>, private router: Router) {
+    super(store);
   }
 
-  property: Property;
-
-  ngOnInit(): void {
+  initFormFields(): void {
     this.form = this.fb.group({
-      typeOfProperty: ['', [Validators.required]],
       subTypeOfProperty: ['', [Validators.required]],
-      bhkType: '',
-      propertyTypes: 'ss'
+      noOfBedrooms: '',
+      noOfBalconies: '',
+      noOfBathrooms: '',
+      floorNo: '',
+      totalFloors: '',
+      noOfCoveredParking: '',
+      noOfOpenParking: ''
+
     });
-
-    // TODO: unscribe
-    this.store.select(getCurrentProperty).subscribe(
-      property => {
-        if (property) {
-          console.log('from select  ' + property.subTypeOfProperty);
-          this.displayProperty(property);
-        }
-      }
-    );
   }
 
-  displayProperty(property: Property): void {
-    if (property) {
-      this.form.reset();
-      this.form.patchValue({
-        subTypeOfProperty: property.subTypeOfProperty,
-        typeOfProperty: property.typeOfProperty
-      });
-    }
-  }
 
-  onSave(originalProperty: Property): void {
-    if (this.form.valid && this.form.dirty) {
-
-      const property: Property = {...originalProperty, ...this.form.value};
-      this.store.dispatch(setCurrentProperty({property}));
-      this.router.navigateByUrl('/post-property-location');
-
-    }
+  navigateNextPageOnSuccess(): void {
+    this.router.navigateByUrl('/post-property-location');
   }
 
   ngOnDestroy(): void {
   }
+
 
 }
