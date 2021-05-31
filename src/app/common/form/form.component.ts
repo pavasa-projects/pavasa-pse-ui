@@ -74,7 +74,15 @@ export abstract class FormComponent implements OnInit {
       }
       this.navigateNextPageOnSuccess();
 
+    } else {
+      this.form.markAllAsTouched();
+      this.navigateNextPageOnError();
     }
+
+  }
+
+  navigateNextPageOnError(): void {
+
   }
 
   abstract navigateNextPageOnSuccess(): void;

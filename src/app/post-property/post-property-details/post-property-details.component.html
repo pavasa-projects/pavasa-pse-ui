@@ -5,7 +5,8 @@
       <div class="row pt-5 pt-lg-3">
         <div class="col-12 col-lg-10">
 
-          <form action="#" method="post" (ngSubmit)="onSave(property);" [formGroup]="form" class="card border-light p-4 p-lg-5 mb-4">
+          <form action="#" method="post" (ngSubmit)="onSave(property);" [formGroup]="form"
+                class="card border-light p-4 p-lg-5 mb-4">
             <h3>Step 1: Property Details</h3>
             <p class="lead ">Tell us about your property.</p>
 
@@ -13,7 +14,7 @@
               <div class="col-12 col-lg-7">
                 <div class="form-group pt-4">
                   <label for="typeOfProperty">Property Type</label>
-                  <select class="form-control" id="typeOfProperty" formControlName="subTypeOfProperty">
+                  <select class="form-control" id="typeOfProperty" formControlName="subTypeOfProperty" (blur)="blur()">
                     <option value="" disabled>Select Property Type</option>
                     <option value="" disabled class="bg-soft">Residential Properties</option>
                     <option *ngFor="let residentialType of CONSTANTS.residentialPropertyTypeList"
@@ -22,6 +23,9 @@
                     <option *ngFor="let commercialType of CONSTANTS.commercialPropertyTypeList"
                             [ngValue]="commercialType.item_text">{{commercialType.item_text}}</option>
                   </select>
+                  <span class="help-block" *ngIf="displayMessage.subTypeOfProperty">
+                                {{displayMessage.subTypeOfProperty}}
+                        </span>
                 </div>
 
                 <div class="form-group">
