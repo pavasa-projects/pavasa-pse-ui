@@ -17,6 +17,7 @@ import {PostPropertyPricingPlanComponent} from './post-property/post-property-pr
 import {UserDashboardComponent} from './user-dashboard/user-dashboard.component';
 import {MyAccountComponent} from './user-dashboard/my-account/my-account.component';
 import {MyPropertiesComponent} from './user-dashboard/my-properties/my-properties.component';
+import {ThankYouComponent} from './post-property/thank-you/thank-you.component';
 
 const routes: Routes = [
   {path: 'property-search', component: PropertySearchComponent},
@@ -36,6 +37,7 @@ const routes: Routes = [
   {path: 'post-property-more-details', component: PostPropertyMoreDetailsComponent},
   {path: 'post-property-photos', component: PostPropertyPhotosComponent},
   {path: 'post-property-pricing-plan', component: PostPropertyPricingPlanComponent},
+  {path: 'thank-you', component: ThankYouComponent},
   {
     path: 'user-dashboard', component: UserDashboardComponent, children: [
       {path: '', redirectTo: 'my-properties', pathMatch: 'full'},

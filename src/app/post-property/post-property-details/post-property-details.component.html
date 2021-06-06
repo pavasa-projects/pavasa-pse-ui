@@ -14,7 +14,7 @@
               <div class="col-12 col-lg-7">
                 <div class="form-group pt-4">
                   <label for="typeOfProperty">Property Type</label>
-                  <select class="form-control" id="typeOfProperty" formControlName="subTypeOfProperty" (blur)="blur()">
+                  <select class="form-control" id="typeOfProperty" formControlName="subTypeOfProperty" (blur)="blur()"  [ngClass]="{'has-error': displayMessage.subTypeOfProperty}">
                     <option value="" disabled>Select Property Type</option>
                     <option value="" disabled class="bg-soft">Residential Properties</option>
                     <option *ngFor="let residentialType of CONSTANTS.residentialPropertyTypeList"
@@ -23,9 +23,9 @@
                     <option *ngFor="let commercialType of CONSTANTS.commercialPropertyTypeList"
                             [ngValue]="commercialType.item_text">{{commercialType.item_text}}</option>
                   </select>
-                  <span class="help-block" *ngIf="displayMessage.subTypeOfProperty">
+                  <div class="text-danger" *ngIf="displayMessage.subTypeOfProperty">
                                 {{displayMessage.subTypeOfProperty}}
-                        </span>
+                        </div>
                 </div>
 
                 <div class="form-group">
@@ -38,6 +38,9 @@
                       <input ngbButton type="radio" [value]="bedroom"> {{bedroom}}
                     </label>
                   </div>
+                  <div class="text-danger" *ngIf="displayMessage.noOfBedrooms">
+                                {{displayMessage.noOfBedrooms}}
+                        </div>
                 </div>
                 <div class="form-group">
                   <div class="label ">Number of Balconies</div>
@@ -48,6 +51,9 @@
                            *ngFor="let balcony of CONSTANTS.balconies">
                       <input ngbButton type="radio" [value]="balcony"> {{balcony}}
                     </label>
+                  </div>
+                  <div class="text-danger" *ngIf="displayMessage.noOfBalconies">
+                    {{displayMessage.noOfBalconies}}
                   </div>
                 </div>
                 <div class="form-group">
@@ -60,6 +66,9 @@
                       <input ngbButton type="radio" [value]="bathroom"> {{bathroom}}
                     </label>
                   </div>
+                  <div class="text-danger" *ngIf="displayMessage.noOfBathrooms">
+                    {{displayMessage.noOfBathrooms}}
+                  </div>
                 </div>
                 <div class="form-group">
                   <label for="typeOfProperty">Floor Number</label>
@@ -68,6 +77,9 @@
                     <option *ngFor="let floorNo of CONSTANTS.floorNumbers"
                             [ngValue]="floorNo">{{floorNo}}</option>
                   </select>
+                  <div class="text-danger" *ngIf="displayMessage.floorNo">
+                    {{displayMessage.floorNo}}
+                  </div>
                 </div>
                 <div class="form-group">
                   <label for="typeOfProperty">Total Floors</label>
@@ -76,6 +88,9 @@
                     <option *ngFor="let floorNo of CONSTANTS.floorNumbers"
                             [ngValue]="floorNo">{{floorNo}}</option>
                   </select>
+                  <div class="text-danger" *ngIf="displayMessage.totalFloors">
+                    {{displayMessage.totalFloors}}
+                  </div>
                 </div>
 
                 <div class="form-group">
@@ -88,6 +103,9 @@
                       <input ngbButton type="radio" [value]="coveredParking"> {{coveredParking}}
                     </label>
                   </div>
+                  <div class="text-danger" *ngIf="displayMessage.noOfCoveredParking">
+                    {{displayMessage.noOfCoveredParking}}
+                  </div>
                 </div>
 
                 <div class="form-group">
@@ -99,6 +117,9 @@
                            *ngFor="let openParking of CONSTANTS.balconies">
                       <input ngbButton type="radio" [value]="openParking"> {{openParking}}
                     </label>
+                  </div>
+                  <div class="text-danger" *ngIf="displayMessage.noOfOpenParking">
+                    {{displayMessage.noOfOpenParking}}
                   </div>
                 </div>
                 <div class="form-group pt-4">

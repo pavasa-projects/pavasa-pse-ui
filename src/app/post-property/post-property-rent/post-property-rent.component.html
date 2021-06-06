@@ -18,24 +18,35 @@
               <div class="col-12 col-lg-7">
                 <div class="form-group pt-4">
                   <label for="monthlyRent">Monthly Rent</label>
-                  <div class="input-group mb-4">
+                  <div class="input-group">
                     <input class="form-control" ngbAutofocus id="monthlyRent" placeholder="Monthly Rent"
                            type="text"  formControlName="monthlyRent">
                   </div>
+                  <div class="text-danger" *ngIf="displayMessage.monthlyRent">
+                    {{displayMessage.monthlyRent}}
+                  </div>
+
                 </div>
                 <div class="form-group">
                   <label for="securityAmount">Security Amount</label>
-                  <div class="input-group mb-4">
+                  <div class="input-group">
                     <input class="form-control" ngbAutofocus id="securityAmount" placeholder="Security Amount"
                            type="text"  formControlName="securityAmount">
+                  </div>
+                  <div class="text-danger" *ngIf="displayMessage.securityAmount">
+                    {{displayMessage.securityAmount}}
                   </div>
                 </div>
                 <div class="form-group">
                   <label for="maintenanceCharges">Monthly Maintenance Charges</label>
-                  <div class="input-group mb-4">
+                  <div class="input-group">
                     <input class="form-control" ngbAutofocus id="maintenanceCharges" placeholder="Maintenance Charges if any"
                            type="text"  formControlName="maintenanceCharges">
                   </div>
+                  <div class="text-danger" *ngIf="displayMessage.maintenanceCharges">
+                    {{displayMessage.maintenanceCharges}}
+                  </div>
+
                 </div>
 
 

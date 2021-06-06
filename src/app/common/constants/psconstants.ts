@@ -1,5 +1,23 @@
 export const PS_CONSTANTS = {
   propertyTypeList: ['Residential', 'Commercial'],
+  dropdownList: [
+    {item_id: 1, item_text: '1 BHK'},
+    {item_id: 2, item_text: '2 BHK'},
+    {item_id: 3, item_text: '3 BHK'},
+    {item_id: 4, item_text: '4 BHK'},
+    {item_id: 5, item_text: '4+ BHK'}
+  ],
+  dropdownSettings: {
+    singleSelection: false,
+    idField: 'item_id',
+    textField: 'item_text',
+    selectAllText: 'Select All',
+    unSelectAllText: 'UnSelect All',
+    enableCheckAll: false,
+    itemsShowLimit: 2,
+    allowSearchFilter: false,
+    showSelectedItemsAtTop: true
+  },
   residentialPropertyTypeList: ['cc', 'ddd'],
   commercialPropertyTypeList: [
     {item_id: 'Office space', item_text: 'Office space'},

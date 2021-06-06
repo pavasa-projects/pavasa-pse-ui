@@ -54,8 +54,8 @@
 
                       <ng-multiselect-dropdown *ngIf="this.form.get('typeOfProperty').value == 'Residential'"
                                                [placeholder]="'Select BHKs'"
-                                               [settings]="dropdownSettings"
-                                               [data]="dropdownList"
+                                               [settings]="CONSTANTS.dropdownSettings"
+                                               [data]="CONSTANTS.dropdownList"
                                                (onSelect)="onItemSelect($event)"
                                                (onSelectAll)="onSelectAll($event)"
                                                class="custom-multiselect"
@@ -65,7 +65,7 @@
 
                       <ng-multiselect-dropdown *ngIf="this.form.get('typeOfProperty').value == 'Commercial'"
                                                [placeholder]="'Property Type'"
-                                               [settings]="dropdownSettings"
+                                               [settings]="CONSTANTS.dropdownSettings"
                                                [data]="CONSTANTS.commercialPropertyTypeList"
                                                (onSelect)="onItemSelect($event)"
                                                (onSelectAll)="onSelectAll($event)"

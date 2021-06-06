@@ -5,7 +5,8 @@
       <div class="row pt-5 pt-lg-3">
         <div class="col-12 col-lg-10">
 
-          <form action="#" method="post" [formGroup]="form" class="card border-light p-4 p-lg-5 mb-4">
+          <form action="#" method="post" (ngSubmit)="onSave(property);" [formGroup]="form"
+                class="card border-light p-4 p-lg-5 mb-4">
             <div class="form-group ">
               <a [routerLink]="['/post-property-rent']" class="text-secondary font-small"
               ><i class="fas fa-arrow-left fa-lg"></i> <span class="pl-3 fa-lg font-weight-bold">Back</span>
@@ -20,7 +21,10 @@
                   <label for="carpetArea">Carpet Area (Sq-Ft)</label>
                   <div class="input-group mb-4">
                     <input class="form-control" ngbAutofocus id="carpetArea" placeholder="Carpet Area in sq. ft"
-                           type="text" aria-label="your name">
+                           type="text" formControlName="carpetArea">
+                  </div>
+                  <div class="text-danger" *ngIf="displayMessage.carpetArea">
+                    {{displayMessage.carpetArea}}
                   </div>
                 </div>
                 <div class="form-group">
@@ -35,7 +39,8 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><span class="far fa-calendar-alt"></span></span>
                     </div>
-                    <input class="form-control datepicker" id="availableFrom" [(ngModel)]="dateModel" [ngModelOptions]="{standalone: true}" ngbDatepicker
+                    <input class="form-control datepicker" id="availableFrom" [(ngModel)]="dateModel"
+                           [ngModelOptions]="{standalone: true}" ngbDatepicker
                            #d="ngbDatepicker" (click)="d.toggle()" placeholder="DD/MM/YYYY" type="text"
                            data-position="top">
                   </div>
@@ -43,23 +48,31 @@
                 </div>
                 <div class="form-group">
                   <div class="label">Preferred Tenant Type</div>
-                  <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic">
+                  <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic"
+                       formControlName="preferredTenantType">
                     <label ngbButtonLabel
                            class="btn-soft border-gray-500 border-top-left-radius-0 border-top-right-radius-0 border-bottom-left-radius-0 border-bottom-right-radius-0 mr-2"
                            *ngFor="let tenantType of CONSTANTS.tenantTypes">
                       <input ngbButton type="radio" [value]="tenantType"> {{tenantType}}
                     </label>
                   </div>
+                  <div class="text-danger" *ngIf="displayMessage.preferredTenantType">
+                    {{displayMessage.preferredTenantType}}
+                  </div>
                 </div>
 
                 <div class="form-group">
                   <div class="label">Furnishing Status</div>
-                  <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic">
+                  <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic"
+                       formControlName="furnishingStatus">
                     <label ngbButtonLabel
                            class="btn-soft border-gray-500 border-top-left-radius-0 border-top-right-radius-0 border-bottom-left-radius-0 border-bottom-right-radius-0 mr-2"
                            *ngFor="let furnishingStatus of CONSTANTS.furnishingStatuses">
                       <input ngbButton type="radio" [value]="furnishingStatus"> {{furnishingStatus}}
                     </label>
+                  </div>
+                  <div class="text-danger" *ngIf="displayMessage.furnishingStatus">
+                    {{displayMessage.furnishingStatus}}
                   </div>
                 </div>
 
@@ -67,24 +80,29 @@
                 <div class="form-group">
                   <div class="label">Furnishing Details</div>
                   <ul id="furnishings" class=" list-group list-group list-group-flush  border-0">
-                    <li class="list-group-item border-0 py-1 px-0 d-flex align-items-center justify-content-between" *ngFor="let furnishing of CONSTANTS.furnishings">
+                    <li class="list-group-item border-0 py-1 px-0 d-flex align-items-center justify-content-between"
+                        *ngFor="let furnishing of CONSTANTS.furnishings">
                       <div class="form-check">
-                        <input class="form-check-input" type="checkbox" [value]="furnishing" [id]="furnishing">
+                        <input class="form-check-input" [formControlName]="furnishing" type="checkbox"
+                               [value]="furnishing" [id]="furnishing" (change)="onCheckboxChange('furnishingDetails',$event)">
                         <label class="form-check-label" [htmlFor]="furnishing">
                           {{furnishing}}
                         </label>
                       </div>
                     </li>
-
                   </ul>
+                  <div class="text-danger" *ngIf="displayMessage.furnishingDetails">
+                    {{displayMessage.furnishingDetails}}
+                  </div>
                 </div>
 
                 <div class="form-group">
                   <div class="label">Amenities</div>
                   <ul id="amenities" class=" list-group list-group list-group-flush  border-0">
-                    <li class="list-group-item border-0 py-1 px-0 d-flex align-items-center justify-content-between" *ngFor="let amenity of CONSTANTS.amenities">
+                    <li class="list-group-item border-0 py-1 px-0 d-flex align-items-center justify-content-between"
+                        *ngFor="let amenity of CONSTANTS.amenities">
                       <div class="form-check">
-                        <input class="form-check-input" type="checkbox" [value]="amenity" [id]="amenity">
+                        <input class="form-check-input" type="checkbox" [value]="amenity" [id]="amenity" (change)="onCheckboxChange('amenities',$event)">
                         <label class="form-check-label" [htmlFor]="amenity">
                           {{amenity}}
                         </label>
@@ -92,13 +110,14 @@
                     </li>
 
                   </ul>
+                  <div class="text-danger" *ngIf="displayMessage.amenities">
+                    {{displayMessage.amenities}}
+                  </div>
                 </div>
 
 
-
                 <div class="form-group pt-4">
-                  <button [routerLink]="['/post-property-photos']"
-                          class="btn-lg btn-block btn-secondary mt-2 animate-up-2"
+                  <button class="btn-lg btn-block btn-secondary mt-2 animate-up-2"
                           type="submit">Next
                   </button>
                 </div>

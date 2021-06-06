@@ -1,9 +1,10 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, ElementRef, OnInit} from '@angular/core';
 import {FormComponent} from '../../common/form/form.component';
-import {FormBuilder, Validators} from '@angular/forms';
+import {FormArray, FormBuilder, FormControl, Validators} from '@angular/forms';
 import {NgbDatepickerConfig, NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
 import {Store} from '@ngrx/store';
 import {AppState} from '../../state/app.state';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -14,7 +15,7 @@ import {AppState} from '../../state/app.state';
 export class PostPropertyMoreDetailsComponent extends FormComponent implements OnInit {
   dateModel: NgbDateStruct;
 
-  constructor(private fb: FormBuilder, private config: NgbDatepickerConfig, store: Store<AppState>) {
+  constructor(private fb: FormBuilder, private router: Router, private config: NgbDatepickerConfig, store: Store<AppState>, protected el: ElementRef) {
     super(store);
     const current = new Date();
     config.minDate = {
@@ -24,15 +25,35 @@ export class PostPropertyMoreDetailsComponent extends FormComponent implements O
     config.outsideDays = 'hidden';
   }
 
-  ngOnInit(): void {
+  initFormFields(): void {
     this.form = this.fb.group({
-      typeOfProperty: ['', [Validators.required]],
-      subTypeOfProperty: ['', [Validators.required]],
-      bhkType: '',
-      propertyTypes: ''
+      carpetArea: ['', [Validators.required]],
+      preferredTenantType: ['', [Validators.required]],
+      furnishingStatus: ['', [Validators.required]],
+      furnishingDetails: new FormArray([], [Validators.required]),
+      amenities: new FormArray([], [Validators.required]),
     });
   }
 
   navigateNextPageOnSuccess(): void {
+    this.router.navigateByUrl('/post-property-photos');
   }
+
+  onCheckboxChange(formArrName, e): void {
+    const checkArray: FormArray = this.form.get(formArrName) as FormArray;
+
+    if (e.target.checked) {
+      checkArray.push(new FormControl(e.target.value));
+    } else {
+      let i = 0;
+      checkArray.controls.forEach((item: FormControl) => {
+        if (item.value === e.target.value) {
+          checkArray.removeAt(i);
+          return;
+        }
+        i++;
+      });
+    }
+  }
+
 }

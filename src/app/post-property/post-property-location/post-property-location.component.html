@@ -5,7 +5,8 @@
       <div class="row pt-5 pt-lg-3">
         <div class="col-12 col-lg-10">
 
-          <form action="#" method="post" [formGroup]="form" class="card border-light p-4 p-lg-5">
+          <form action="#" method="post" (ngSubmit)="onSave(property);" [formGroup]="form"
+                class="card border-light p-4 p-lg-5">
             <div class="form-group ">
               <a [routerLink]="['/post-property-details']" class="text-secondary font-small"
               ><i class="fas fa-arrow-left fa-lg"></i> <span class="pl-3 fa-lg font-weight-bold">Back</span>
@@ -18,21 +19,35 @@
 
                 <div class="form-group mb-lg-0">
                   <div class="label">Society/Project/Building/Location</div>
-                  <app-autocomplete-location></app-autocomplete-location>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><span class="fas fa-map-marker-alt"></span></span>
+                    </div>
+                    <input ngx-google-places-autocomplete [options]='options' #placesRef="ngx-places" (change)="manualAddress()"
+                           (onAddressChange)="handleAddressChange($event)"  class="form-control autocomplete" placeholder="Search location" formControlName="propertyLocation" />
+
+                  </div>
+                  <div class="text-danger" *ngIf="displayMessage.propertyLocation">
+                    {{displayMessage.propertyLocation}}
+                  </div>
                 </div>
 
                 <div class="form-group mt-4">
                   <label for="maintenanceCharges">Society Name</label>
                   <div class="input-group mb-4">
                     <input class="form-control" ngbAutofocus id="maintenanceCharges" placeholder="Enter Society name"
+                           formControlName="societyName"
                            type="text" aria-label="your name">
+                  </div>
+                  <div class="text-danger" *ngIf="displayMessage.societyName">
+                    {{displayMessage.societyName}}
                   </div>
                 </div>
 
                 <div class="form-group pt-4">
-                  <button [routerLink]="['/post-property-rent']"
-                          class="btn-lg btn-block btn-secondary mt-2 animate-up-2"
-                          type="submit">Next
+                  <button
+                    class="btn-lg btn-block btn-secondary mt-2 animate-up-2"
+                    type="submit">Next
                   </button>
                 </div>
               </div>
