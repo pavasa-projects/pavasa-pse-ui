@@ -23,5 +23,11 @@ export const propertyReducer = createReducer<PropertyState>(
       ...state,
       currentProperty: action.property
     };
+  }),
+  on(PropertyStateActions.clearCurrentProperty, (state, action): PropertyState => {
+    return {
+      ...state,
+      currentProperty: null
+    };
   })
 );

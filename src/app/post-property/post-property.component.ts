@@ -1,8 +1,9 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, ElementRef, OnInit} from '@angular/core';
 import {FormBuilder, Validators} from '@angular/forms';
 import {FormComponent} from '../common/form/form.component';
 import {Store} from '@ngrx/store';
 import {AppState} from '../state/app.state';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-post-property',
@@ -12,21 +13,18 @@ import {AppState} from '../state/app.state';
 export class PostPropertyComponent extends FormComponent implements OnInit {
 
 
-  constructor(private fb: FormBuilder, store: Store<AppState>) {
+  constructor(private fb: FormBuilder, store: Store<AppState>, private router: Router, protected el: ElementRef) {
     super(store);
   }
 
-  ngOnInit(): void {
+  initFormFields(): void {
     this.form = this.fb.group({
-      typeOfProperty: ['', [Validators.required]],
-      subTypeOfProperty: ['', [Validators.required]],
-      bhkType: '',
-      propertyTypes: ''
+      fullName: ['', [Validators.required, Validators.pattern('[A-Za-z,.\' ]*')]]
     });
-
   }
 
   navigateNextPageOnSuccess(): void {
+    this.router.navigateByUrl('/post-property-details');
   }
 
 }

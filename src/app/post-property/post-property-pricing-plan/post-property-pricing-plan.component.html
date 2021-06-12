@@ -5,7 +5,7 @@
       <div class="row pt-5 pt-lg-3">
         <div class="col-12 col-lg-10">
 
-          <form action="#" method="post" class="card border-light p-4 p-lg-5">
+          <form action="#" method="post" class="card border-light p-4 p-lg-5" (ngSubmit)="onSave()">
             <div class="form-group ">
               <a [routerLink]="['/post-property-photos']" class="text-secondary font-small"
               ><i class="fas fa-arrow-left fa-lg"></i> <span class="pl-3 fa-lg font-weight-bold">Back</span>
@@ -63,7 +63,7 @@
 
 
                       <button class="btn-lg btn-block btn-secondary mt-2 animate-up-2 mt-5"
-                              type="submit" [routerLink]="['/thank-you']">Pay & Publish your property
+                              type="submit">Pay & Publish your property
                       </button>
                     </div>
                     <!-- End Content -->

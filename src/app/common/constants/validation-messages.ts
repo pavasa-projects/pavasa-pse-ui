@@ -1,4 +1,8 @@
 export const VALIDATION_MSG = {
+  fullName: {
+    required: 'Please enter your name.',
+    pattern: 'Please enter your valid name.'
+  },
   propertyLocation: {
     required: 'Please select property address.'
   },

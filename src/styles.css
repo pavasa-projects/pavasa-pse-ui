@@ -27184,10 +27184,10 @@ button.section-github:focus {
   display: none;
 }
 
-.navbar .navbar-nav .dropdown-submenu .dropdown-menu.show {
+.navbar .navbar-nav  .dropdown-submenu .dropdown-menu.show {
   opacity: 1;
   pointer-events: all;
-  display: block;
+  animation: show-navbar-dropdown .25s ease forwards;
 }
 
 .navbar .navbar-nav .nav-link-arrow {
@@ -30241,14 +30241,14 @@ button.section-github:focus {
     transition: all 0.2s ease;
   }
 
-  .navbar-nav .dropdown.show > .dropdown-menu,
+  .navbar-nav .dropdown:hover > .dropdown-menu,
   .navbar-nav .dropdown-submenu.show > .dropdown-menu {
     display: block;
     opacity: 1;
     pointer-events: auto;
   }
 
-  .navbar-nav .dropdown.show > .dropdown-menu {
+  .navbar-nav .dropdown:hover > .dropdown-menu {
     left: 50%;
     transform: translate(-50%, -7px);
   }

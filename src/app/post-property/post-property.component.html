@@ -5,7 +5,7 @@
       <div class="row pt-5 pt-lg-3">
         <div class="col-12 col-lg-10">
 
-          <form action="#" method="post" [formGroup]="form" class="card border-light p-4 p-lg-5 mb-4">
+          <form action="#" method="post" (ngSubmit)="onSave(property);" [formGroup]="form" class="card border-light p-4 p-lg-5 mb-4">
             <h3>Rent your property on Spaces</h3>
             <p class="lead ">You are posting property on <span class="font-weight-bold">India's trusted site</span>.
               Only individual owners are allow to post property.</p>
@@ -16,12 +16,15 @@
                   <label for="name">Your name</label>
                   <div class="input-group mb-4">
                     <input class="form-control" ngbAutofocus id="name" placeholder="Enter your name"
-                           type="text" aria-label="your name">
+                           type="text" aria-label="your name" formControlName="fullName">
+                  </div>
+                  <div class="text-danger" *ngIf="displayMessage.fullName">
+                    {{displayMessage.fullName}}
                   </div>
                 </div>
 
                 <div class="form-group pt-4">
-                  <button [routerLink]="['/post-property-details']" class="btn-lg btn-block btn-secondary mt-2 animate-up-2"
+                  <button class="btn-lg btn-block btn-secondary mt-2 animate-up-2"
                           type="submit">Login & Post your property
                   </button>
                 </div>
