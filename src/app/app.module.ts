@@ -34,6 +34,8 @@ import {MyAccountComponent} from './user-dashboard/my-account/my-account.compone
 import {StoreModule} from '@ngrx/store';
 import {propertyReducer} from './state/property/property.reducer';
 import {PostPropertyModule} from './post-property/post-property.module';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -70,7 +72,8 @@ import {PostPropertyModule} from './post-property/post-property.module';
     FormsModule,
     NgxGalleryModule,
     PostPropertyModule,
-    StoreModule.forRoot({})
+    StoreModule.forRoot({}),
+    HttpClientModule
   ],
   providers: [{provide: NgbDateParserFormatter, useClass: NgbDateCustomParserFormatter}],
   bootstrap: [AppComponent]
