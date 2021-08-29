@@ -13,7 +13,8 @@ import {AppState} from '../../state/app.state';
 })
 export class PostPropertyDetailsComponent extends FormComponent implements OnInit, OnDestroy {
 
-  constructor(private fb: FormBuilder, store: Store<AppState>, private router: Router, protected el: ElementRef) {
+  constructor(private fb: FormBuilder, store: Store<AppState>, private router: Router,
+              protected el: ElementRef) {
     super(store);
   }
 

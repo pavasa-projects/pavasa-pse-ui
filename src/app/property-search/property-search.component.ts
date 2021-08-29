@@ -13,7 +13,6 @@ import {AppState} from '../state/app.state';
 })
 export class PropertySearchComponent extends FormComponent implements OnInit {
 
-
   constructor(private fb: FormBuilder, store: Store<AppState>) {
     super(store);
   }

@@ -9,20 +9,27 @@ import {Property} from '../model/property';
 })
 export class DataService {
 
+  private propertyAPIUrl = 'http://localhost:5000/api/v1/property';
+  private httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json'
+    })
+  };
+
+
   constructor(private http: HttpClient) {
   }
 
+  getProperty(id: string): Observable<Property> {
+    return this.http.get<Property>(this.propertyAPIUrl + '/' + id);
+  }
+
   getProperties(): Observable<Property[]> {
-    console.log('Getting all properties from the server.');
-    return this.http.get<Property[]>('/api/properties');
+    return this.http.get<Property[]>(this.propertyAPIUrl);
   }
 
   addProperty(newProperty: Property): Observable<Property> {
-    return this.http.post<Property>('/api/properties', newProperty, {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json'
-      })
-    });
+    return this.http.post<Property>(this.propertyAPIUrl, newProperty, this.httpOptions);
   }
 
   /*updateProperty(updatedProperty: Property): Observable<void> {

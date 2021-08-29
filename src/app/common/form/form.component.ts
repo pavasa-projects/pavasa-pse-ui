@@ -3,7 +3,6 @@ import {IDropdownSettings} from 'ng-multiselect-dropdown';
 import {FormGroup} from '@angular/forms';
 import {PS_CONSTANTS} from '../constants/psconstants';
 import {Property} from '../../model/property';
-import {setCurrentProperty} from '../../state/property/actions/property.state.actions';
 import {Store} from '@ngrx/store';
 import {AppState} from '../../state/app.state';
 import {getCurrentProperty} from '../../state/property/property.reducer';
@@ -12,6 +11,7 @@ import {GenericValidator} from '../validators/generic-validator';
 import {VALIDATION_MSG} from '../constants/validation-messages';
 import {fromEvent} from 'rxjs';
 import {debounceTime, take} from 'rxjs/operators';
+import {DataService} from '../../service/data.service';
 
 @Component({
   selector: 'app-form',
@@ -24,13 +24,14 @@ export abstract class FormComponent implements OnInit {
   dropdownList = [];
   dropdownSettings: IDropdownSettings = {};
   public form: FormGroup;
+  public errorMsg: string;
 
   // for validation messages
   public displayMessage: { [key: string]: string } = {};
   private genericValidator: GenericValidator;
   protected el: ElementRef;
 
-  protected constructor(protected store: Store<AppState>) {
+  protected constructor(protected store: Store<AppState>, protected dataService?: DataService) {
     this.genericValidator = new GenericValidator(VALIDATION_MSG);
   }
 
@@ -64,9 +65,28 @@ export abstract class FormComponent implements OnInit {
       if (this.form.dirty) {
         const property: Property = {...originalProperty, ...this.form.value};
         this.setCustomPropertyInStore(property);
-        this.store.dispatch(PropertyStateActions.setCurrentProperty({property}));
+
+        // TODO call on last page only
+        if (this.dataService) {
+          this.dataService.addProperty(property).subscribe(
+            (insertedProperty => {
+              console.log('inserted id ==> ' + insertedProperty.societyName);
+              this.store.dispatch(PropertyStateActions.setCurrentProperty({property: insertedProperty}));
+              this.navigateNextPageOnSuccess();
+            }),
+            (error => {
+              this.errorMsg = error.error.errorMsg;
+              this.form.markAsDirty();
+            })
+          );
+        } else {
+          this.store.dispatch(PropertyStateActions.setCurrentProperty({property}));
+          this.navigateNextPageOnSuccess();
+        }
+
+      } else {
+        this.navigateNextPageOnSuccess();
       }
-      this.navigateNextPageOnSuccess();
 
     } else {
       this.form.markAllAsTouched();

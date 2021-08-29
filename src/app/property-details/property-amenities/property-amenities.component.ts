@@ -1,4 +1,6 @@
 import {Component, OnInit} from '@angular/core';
+import {Property} from '../../model/property';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-property-amenities',
@@ -7,17 +9,19 @@ import {Component, OnInit} from '@angular/core';
 })
 export class PropertyAmenitiesComponent implements OnInit {
 
+  private property: Property;
+
   amenities = [
-    {name: 'Lift', enable: true},
-    {name: 'Gym', enable: true},
-    {name: 'Garden', enable: true},
+    {name: 'Lift', enable: false},
+    {name: 'Gym', enable: false},
+    {name: 'Garden', enable: false},
     {name: 'Club House', enable: false},
-    {name: 'Swimming Pool', enable: true},
-    {name: 'Jogging Track', enable: true},
-    {name: 'Security', enable: true},
-    {name: 'CCTV Camera', enable: true},
-    {name: 'Wi-Fi Connectivity', enable: true},
-    {name: 'Intercom', enable: true},
+    {name: 'Swimming Pool', enable: false},
+    {name: 'Jogging Track', enable: false},
+    {name: 'Security', enable: false},
+    {name: 'CCTV Camera', enable: false},
+    {name: 'Wi-Fi Connectivity', enable: false},
+    {name: 'Intercom', enable: false},
   ];
 
   furnishings = [
@@ -33,10 +37,17 @@ export class PropertyAmenitiesComponent implements OnInit {
     {name: 'Dinning Table', enable: true},
   ];
 
-  constructor() {
+  constructor(private route: ActivatedRoute) {
   }
 
   ngOnInit(): void {
+    this.property = this.route.parent.snapshot.data.property;
+    this.amenities.map(amenity => {
+      this.property.amenities.includes(amenity.name) ? amenity.enable = true : amenity.enable = false;
+    });
+    this.furnishings.map(furnishing => {
+      this.property.furnishingDetails.includes(furnishing.name) ? furnishing.enable = true : furnishing.enable = false;
+    });
   }
 
 

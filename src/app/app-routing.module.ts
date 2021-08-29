@@ -18,12 +18,16 @@ import {UserDashboardComponent} from './user-dashboard/user-dashboard.component'
 import {MyAccountComponent} from './user-dashboard/my-account/my-account.component';
 import {MyPropertiesComponent} from './user-dashboard/my-properties/my-properties.component';
 import {ThankYouComponent} from './post-property/thank-you/thank-you.component';
+import {PropertyDetailsResolve} from './property-details/resolver/property-details-resolve';
 
 const routes: Routes = [
   {path: 'property-search', component: PropertySearchComponent},
   {path: 'search-result', component: SearchResultComponent},
   {
-    path: 'property-details/:id', component: PropertyDetailsComponent, children: [
+    path: 'property-details/:id',
+    component: PropertyDetailsComponent,
+    resolve: {property: PropertyDetailsResolve},
+    children: [
       {path: '', redirectTo: 'about', pathMatch: 'full'},
       {path: 'about', component: PropertyAboutComponent},
       {path: 'amenities', component: PropertyAmenitiesComponent},

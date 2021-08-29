@@ -4,7 +4,7 @@
   <!-- Hero -->
 
 
-  <div class="section">
+  <div class="section" *ngIf="property">
     <div class="container">
       <div class="row">
         <div class="col-12 col-lg-8">
@@ -35,27 +35,27 @@
             <ul class="list-group font-weight-bold list-group-flush">
               <li class="list-group-item border-light">
                 <span class="font-weight-normal">Monthly Rent</span>
-                <div class="font-weight-bold pt-1"> <span class="fas fa-rupee-sign mr-2"></span>25,000</div>
+                <div class="font-weight-bold pt-1"> <span class="fas fa-rupee-sign mr-2"></span>{{property.monthlyRent | number}}</div>
               </li>
               <li class="list-group-item border-light">
-                <span class="font-weight-normal">Sq.Ft</span>
-                <div class="font-weight-bold pt-1" >950</div>
+                <span class="font-weight-normal">Carpet Area</span>
+                <div class="font-weight-bold pt-1" >{{property.carpetArea}} Sq.Ft</div>
               </li>
               <li class="list-group-item border-light">
                 <div class="font-weight-normal">Deposit</div>
-                <div class="font-weight-bold pt-1"><span class="fas fa-rupee-sign mr-2"></span>1,25,000</div>
+                <div class="font-weight-bold pt-1"><span class="fas fa-rupee-sign mr-2"></span>{{property.securityAmount | number}}</div>
               </li>
               <li class="list-group-item border-light">
                 <span class="font-weight-normal">Available From</span>
-                <div class="font-weight-bold pt-1">15-May</div>
+                <div class="font-weight-bold pt-1">15-May-TODO</div>
               </li>
               <li class="list-group-item ">
                 <span class="font-weight-normal">Bedrooms</span>
-                <div class="font-weight-bold pt-1">2</div>
+                <div class="font-weight-bold pt-1">{{property.noOfBedrooms}}</div>
               </li>
               <li class="list-group-item  border-light">
                 <span class="font-weight-normal">Bathrooms</span>
-                <div class="font-weight-bold pt-1">2</div>
+                <div class="font-weight-bold pt-1">{{property.noOfBathrooms}}</div>
               </li>
 
 
@@ -78,27 +78,28 @@
             <ul class="list-group list-group-flush">
               <li class="list-group-item border-light">
                 <span>Furnishing</span>
-                <div class="font-weight-bold pt-1"> Fully Furnished</div>
+                <div class="font-weight-bold pt-1">{{property.furnishingStatus}}</div>
               </li>
               <li class="list-group-item border-light">
                 <span>Parking</span>
-                <div class="font-weight-bold pt-1" >1 Covered</div>
+                <div class="font-weight-bold pt-1" *ngIf="property.noOfCoveredParking">{{property.noOfCoveredParking}} Covered</div>
+                <div class="font-weight-bold pt-1" *ngIf="property.noOfOpenParking">{{property.noOfOpenParking}} Opened</div>
               </li>
               <li class="list-group-item border-light">
                 <div>Tenants</div>
-                <div class="font-weight-bold pt-1">Family</div>
+                <div class="font-weight-bold pt-1">{{property.preferredTenantType}}</div>
               </li>
               <li class="list-group-item border-light">
                 <span>Floor</span>
-                <div class="font-weight-bold pt-1">3 (total: 10)</div>
+                <div class="font-weight-bold pt-1">{{property.floorNo}} (total: {{property.totalFloors}})</div>
               </li>
               <li class="list-group-item ">
                 <span>Balconies</span>
-                <div class="font-weight-bold pt-1">2</div>
+                <div class="font-weight-bold pt-1">{{property.noOfBalconies}}</div>
               </li>
               <li class="list-group-item  border-light">
                 <span>Water supply</span>
-                <div class="font-weight-bold pt-1">24 Hrs</div>
+                <div class="font-weight-bold pt-1">24 Hrs- TODO</div>
               </li>
 
 

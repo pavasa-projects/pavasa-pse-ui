@@ -1,5 +1,7 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {} from 'google.maps';
+import {ActivatedRoute} from '@angular/router';
+import {Property} from '../../model/property';
 
 
 @Component({
@@ -13,15 +15,16 @@ export class PropertyLocationComponent implements OnInit {
 
   map: google.maps.Map;
 
-  constructor() {
+  constructor(private route: ActivatedRoute) {
   }
 
   ngOnInit(): void {
-    const propLtdLng = new google.maps.LatLng(18.6001439, 73.7629175);
+    const property: Property = this.route.parent.snapshot.data.property;
+    const propLtdLng = new google.maps.LatLng(property.lat, property.lng);
     const mapProps = {
       center: propLtdLng,
-      zoom: 15,
-      disableDefaultUI: true
+      zoom: 16,
+      disableDefaultUI: false
     };
     this.map = new google.maps.Map(this.gmapElements.nativeElement, mapProps);
 

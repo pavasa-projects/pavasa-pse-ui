@@ -5,6 +5,7 @@ import {NgbDatepickerConfig, NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
 import {Store} from '@ngrx/store';
 import {AppState} from '../../state/app.state';
 import {Router} from '@angular/router';
+import {DataService} from '../../service/data.service';
 
 
 @Component({
@@ -15,8 +16,10 @@ import {Router} from '@angular/router';
 export class PostPropertyMoreDetailsComponent extends FormComponent implements OnInit {
   dateModel: NgbDateStruct;
 
-  constructor(private fb: FormBuilder, private router: Router, private config: NgbDatepickerConfig, store: Store<AppState>, protected el: ElementRef) {
-    super(store);
+  constructor(private fb: FormBuilder, private router: Router,
+              private config: NgbDatepickerConfig, store: Store<AppState>,
+              protected el: ElementRef, protected dataService: DataService) {
+    super(store, dataService);
     const current = new Date();
     config.minDate = {
       year: current.getFullYear(), month:

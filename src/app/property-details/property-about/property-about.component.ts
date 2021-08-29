@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {NgxGalleryAnimation, NgxGalleryImage, NgxGalleryOptions} from 'ngx-gallery-9';
+import {ActivatedRoute} from '@angular/router';
+import {Property} from '../../model/property';
 
 @Component({
   selector: 'app-property-about',
@@ -11,10 +13,13 @@ export class PropertyAboutComponent implements OnInit {
   galleryOptions: NgxGalleryOptions[];
   galleryImages: NgxGalleryImage[];
 
-  constructor() {
+  property: Property;
+
+  constructor(private route: ActivatedRoute) {
   }
 
   ngOnInit(): void {
+    this.property = this.route.parent.snapshot.data.property;
     this.galleryOptions = [
       {
         width: '100%',
