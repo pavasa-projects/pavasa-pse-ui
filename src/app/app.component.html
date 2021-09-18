@@ -7,7 +7,8 @@
           <img class="navbar-brand-dark common" src="../assets/img/brand/light.svg" height="35" alt="Logo light">
           <img class="navbar-brand-light common" src="../assets/img/brand/dark.svg" height="35" alt="Logo dark">
         </a>
-        <div class="navbar-collapse collapse" id="navbar_global">
+        <div class="navbar-collapse collapse" aria-labelledby="navbar_global">
+          <!--<div class="dropdown-menu dropdown-menu-lg" aria-labelledby="supportDropdown">-->
           <div class="navbar-collapse-header">
             <div class="row">
               <div class="col-6 collapse-brand">
@@ -22,17 +23,16 @@
               </div>
             </div>
           </div>
-
         </div>
-        <div class="d-none d-lg-block @@cta_button_classes">
-          <a [routerLink]="['/post-property']" class="btn btn-md btn-secondary animate-up-2 mr-3"><i
-            class="fas fa-plus mr-2"></i> <span class="d-xl-none">Docs</span> <span class="d-none d-xl-inline">List a Property</span></a>
-          <!--<button (click)="open(content)" class="btn btn-md btn-outline-white animate-up-2">Login / Sign Up</button>-->
+        <div class="d-sm-block @@cta_button_classes">
+          <a [routerLink]="['/post-property']" class="btn btn-md btn-secondary animate-up-2 mr-2"><i
+            class="fas fa-plus mr-2"></i> <span class="d-sm-none font-small">List Property</span><span class="d-none d-sm-inline">List a Property</span></a>
+          <button (click)="open(content)" class="d-none d-sm-inline btn btn-md btn-outline-white animate-up-2">Login / Sign Up</button>
 
         </div>
         <ul class="navbar-nav navbar-nav-hover justify-content-center">
           <li class="nav-item dropdown">
-            <a [routerLink]="['/user-dashboard']" id="supportDropdown" class="btn btn-md btn-outline-white dropdown-toggle" aria-expanded="false" data-toggle="dropdown">
+            <a [routerLink]="['/user-dashboard']" id="supportDropdown" class="btn btn-md btn-outline-white dropdown-toggle  d-none d-sm-block" aria-expanded="false" data-toggle="dropdown">
               <span class="nav-link-inner-text mr-1">User Dashboard</span>
               <i class="fas fa-angle-down nav-link-arrow fa-lg"></i>
             </a>
@@ -67,10 +67,12 @@
             </div>
           </li>
         </ul>
-        <div class="d-flex d-lg-none align-items-center">
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_global"
-                  aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation"><span
-            class="navbar-toggler-icon"></span></button>
+        <div class="d-flex d-sm-none align-items-center">
+          <a [routerLink]="['/user-dashboard/my-account']"> <i class="fa fa-user fa-2x" style="color: darkgray" aria-hidden="true"></i></a>
+
+          <!--<div class="text-center">
+
+          </div>-->
         </div>
       </div>
     </nav>
@@ -101,7 +103,115 @@
     </div>
   </div>
 </footer>
+<ng-template #menuItems let-modal>
+  <div>
+    <div class="modal-header">
+      <div class="col-10">
+        <div class="text-left text-md-left mb-3 mt-md-0 ">
+          <h1 class="mb-0 h3" style="color: #2e75b6">Sign in</h1>
+          <h5 class="pt-4 font-weight-light">We will send you a One Time Password on your mobile number</h5>
+        </div>
+      </div>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <i class="fa fa-times fa-lg" aria-hidden="true"></i>
+      </button>
+    </div>
+    <div>
+      <main>
 
+        <section class=" d-flex section-image py-5 py-lg-0">
+          <div class="container">
+            <div class="row justify-content-center">
+
+              <div class="col-12 d-flex align-items-center justify-content-center">
+                <div
+                  class="signin-inner mt-3 mt-lg-0 bg-white shadow-soft border rounded border-light p-2 p-lg-4 w-100 fmxw-500">
+                  <form action="#">
+                    <!-- Form -->
+                    <div class="form-group">
+                      <label for="mobileNumber" class="h5">Mobile Number</label>
+                      <div class="input-group mb-4">
+                        <input class="form-control" ngbAutofocus id="mobileNumber" placeholder="Enter mobile number"
+                               type="text" aria-label="email address">
+                      </div>
+                    </div>
+
+                    <button type="submit" (click)="getOTP()" class="btn btn-block btn-primary">Get OTP</button>
+                  </form>
+
+                  <div class="d-block d-sm-flex justify-content-center align-items-center mt-4">
+                                <span class="font-weight-normal">
+                                    Not registered?
+                                    <a href="./sign-up.html" class="font-weight-bold">Create account</a>
+                                </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <div class="modal-footer">
+
+    </div>
+  </div>
+  <div *ngIf="showOTPPage">
+    <div class="modal-header">
+      <div class="col-10">
+        <div class="text-left text-md-left mb-3 mt-md-0 ">
+          <h1 class="mb-0 h3" style="color: #2e75b6">Verification</h1>
+          <h5 class="pt-4 font-weight-light">You will get OTP via SMS</h5>
+        </div>
+      </div>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <i class="fa fa-times fa-lg" aria-hidden="true"></i>
+      </button>
+    </div>
+    <div>
+      <main>
+
+        <section class=" d-flex section-image py-5 py-lg-0">
+          <div class="container">
+            <div class="row justify-content-center">
+
+              <div class="col-12 d-flex align-items-center justify-content-center">
+                <div
+                  class="signin-inner mt-3 mt-lg-0 bg-white shadow-soft border rounded border-light p-2 p-lg-4 w-100 fmxw-500">
+                  <form action="#">
+                    <!-- Form -->
+                    <div class="form-group">
+                      <label for="otp" class="h5">Mobile Number</label>
+                      <div class="input-group mb-4">
+                        <input class="form-control" ngbAutofocus id="otp" placeholder="Enter mobile number"
+                               type="text" aria-label="email address">
+                      </div>
+                    </div>
+
+                    <button type="submit" (click)="modal.close('verify');verifyOTP()" class="btn btn-block btn-primary">
+                      Verify
+                    </button>
+                  </form>
+
+                  <div class="d-block d-sm-flex justify-content-center align-items-center mt-4">
+                                <span class="font-weight-normal">
+                                    Not registered?
+                                    <a href="./sign-up.html" class="font-weight-bold">Create account</a>
+                                </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <div class="modal-footer">
+
+    </div>
+  </div>
+
+</ng-template>
 
 <ng-template #content let-modal>
   <div *ngIf="showLoginPage">

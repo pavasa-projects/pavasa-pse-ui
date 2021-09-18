@@ -14,11 +14,11 @@ export const PS_CONSTANTS = {
     selectAllText: 'Select All',
     unSelectAllText: 'UnSelect All',
     enableCheckAll: false,
-    itemsShowLimit: 2,
+    itemsShowLimit: 1,
     allowSearchFilter: false,
     showSelectedItemsAtTop: true
   },
-  residentialPropertyTypeList: ['cc', 'ddd'],
+  residentialPropertyTypeList: ['Apartment', 'Studio Apartment', 'Independent House', 'Penthouse', 'Villa'],
   commercialPropertyTypeList: [
     {item_id: 'Office space', item_text: 'Office space'},
     {item_id: 'Co-working', item_text: 'Co-working'},
@@ -34,6 +34,7 @@ export const PS_CONSTANTS = {
   bathrooms: ['1', '2', '3', '4', '5+'],
   floorNumbers: [...Array(150)].map((_, i) => i),
   furnishingStatuses: ['Furnished', 'Semi-Furnished', 'UnFurnished'],
+  budgets: [...Array(150)].map((_, i) => (i + 1) * 5000),
 
   amenities: [
     'Lift',

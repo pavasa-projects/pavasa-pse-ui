@@ -31,7 +31,10 @@ export class SearchResultComponent implements OnInit {
     this.form = this.fb.group({
       typeOfProperty: 'Residential',
       bhkType: '',
-      propertyTypes: ''
+      minBudget: '',
+      maxBudget: '',
+      subTypeOfProperty: '',
+      furnishingStatus: ''
     });
     this.dataService.getProperties().subscribe(
       listOfProperties => {

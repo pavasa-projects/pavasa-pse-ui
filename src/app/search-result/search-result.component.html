@@ -3,14 +3,14 @@
   <!-- Hero -->
   <!--<div class="section section-header section-image bg-tertiary overlay-primary text-white overflow-hidden">
   </div>-->
-  <div class="search-result section  pt-6 pb-4">
-    <div class=" ">
+  <div class="search-result section  pt-6 pb-4 ">
+    <div class="d-none d-lg-block">
       <div class="row">
         <div class="col-12">
           <div class="card bg-soft  border-light">
             <div class="card-body p-4">
               <form autocomplete="off" method="get" action="#" [formGroup]="form">
-                <div class="row">
+                <div class="row" >
                   <div class="col-12">
                     <div class="row">
                       <div class="col-12 col-lg-3">
@@ -26,37 +26,53 @@
                                                    [data]="CONSTANTS.dropdownList"
                                                    (onSelect)="onItemSelect($event)"
                                                    (onSelectAll)="onSelectAll($event)"
-                                                   class="custom-multiselect-result "
-                                                   formControlName="bhkType"
-                          >
-                          </ng-multiselect-dropdown>
-                        </div>
-                      </div>
-                      <div class="col-12 col-lg-2">
-                        <div class="form-group form-group-lg mb-0">
-                          <ng-multiselect-dropdown *ngIf="this.form.get('typeOfProperty').value == 'Residential'"
-                                                   [placeholder]="'Budget'"
-                                                   [settings]="CONSTANTS.dropdownSettings"
-                                                   [data]="CONSTANTS.dropdownList"
-                                                   (onSelect)="onItemSelect($event)"
-                                                   (onSelectAll)="onSelectAll($event)"
                                                    class="custom-multiselect-result"
                                                    formControlName="bhkType"
                           >
                           </ng-multiselect-dropdown>
                         </div>
                       </div>
+                      <!--TODO budget-->
+                      <!--<div class="col-12 col-lg-2">
+                        <div class="form-group form-group-lg mb-0">
+                          <div ngbDropdown #myDrop="ngbDropdown" >
+                            <button id="dropdownForm1" ngbDropdownToggle>Budget</button>
+                            <div ngbDropdownMenu aria-labelledby="dropdownForm1">
+                              <div class="px-4 py-3">
+                                <div class="form-group ">
+                                  <label for="minBudget">Min</label>
+                                  <select class="form-control" id="minBudget" formControlName="minBudget">
+                                    <option *ngFor="let budget of CONSTANTS.budgets"
+                                            [ngValue]="budget">{{budget | number}}</option>
+                                  </select>
+                                </div>
+                                <div class="form-group ">
+                                  <label for="maxBudget">Max</label>
+                                  <select class="form-control" id="maxBudget" formControlName="maxBudget">
+                                    <option *ngFor="let budget of CONSTANTS.budgets"
+                                            [ngValue]="budget">{{budget | number}}</option>
+                                  </select>
+                                </div>
+                                <button type="submit" class="btn btn-primary"
+                                        (click)="$event.stopPropagation(); myDrop.close();">Done
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>-->
+
 
                       <div class="col-12 col-lg-2">
                         <div class="form-group form-group-lg mb-0">
                           <ng-multiselect-dropdown *ngIf="this.form.get('typeOfProperty').value == 'Residential'"
                                                    [placeholder]="'Property Type'"
                                                    [settings]="CONSTANTS.dropdownSettings"
-                                                   [data]="CONSTANTS.dropdownList"
+                                                   [data]="CONSTANTS.residentialPropertyTypeList"
                                                    (onSelect)="onItemSelect($event)"
                                                    (onSelectAll)="onSelectAll($event)"
                                                    class="custom-multiselect-result"
-                                                   formControlName="bhkType"
+                                                   formControlName="subTypeOfProperty"
                           >
                           </ng-multiselect-dropdown>
                         </div>
@@ -67,17 +83,17 @@
                           <ng-multiselect-dropdown *ngIf="this.form.get('typeOfProperty').value == 'Residential'"
                                                    [placeholder]="'Furnishing'"
                                                    [settings]="CONSTANTS.dropdownSettings"
-                                                   [data]="CONSTANTS.dropdownList"
+                                                   [data]="CONSTANTS.furnishingStatuses"
                                                    (onSelect)="onItemSelect($event)"
                                                    (onSelectAll)="onSelectAll($event)"
                                                    class="custom-multiselect-result"
-                                                   formControlName="bhkType"
+                                                   formControlName="furnishingStatus"
                           >
                           </ng-multiselect-dropdown>
                         </div>
                       </div>
 
-                      <div class="col-12 col-lg-1">
+                      <!--<div class="col-12 col-lg-1">
                         <div class="form-group form-group-lg mb-0">
                           <ng-multiselect-dropdown *ngIf="this.form.get('typeOfProperty').value == 'Residential'"
                                                    [placeholder]="'More'"
@@ -90,7 +106,7 @@
                           >
                           </ng-multiselect-dropdown>
                         </div>
-                      </div>
+                      </div>-->
 
 
                     </div>
@@ -108,10 +124,10 @@
     <div class="container">
       <div class="row">
         <div class="col-12 mb-5">
-          <div class="justify-content-between align-items-center d-none d-md-flex">
+          <div class="justify-content-between align-items-center d-md-flex">
             <div class="mr-3">
               <h2 class="h6 mb-3 mb-md-0">Total Properties Found: <span
-                class="font-weight-bolder text-primary">{{properties.length}}</span></h2>
+                class="font-weight-bolder text-primary" *ngIf="properties">{{properties.length}}</span></h2>
             </div>
           </div>
           <div class="tab-content mt-4 mt-lg-4" id="tabcontentexample-5">
@@ -122,31 +138,36 @@
                   <div class="card border-light mb-4 animate-up-5">
                     <div class="row no-gutters align-items-center">
                       <div class="col-12 col-lg-4 col-xl-4">
-                        <a [routerLink]="['/property-details', property._id]" >
+                        <a [routerLink]="['/property-details', property._id]">
                           <img src="../assets/img/meeting-office.jpg" alt="private office"
                                class="card-img p-2 rounded-xl">
                         </a>
                       </div>
                       <div class="col-12 col-lg-6 col-xl-7">
                         <div class="card-body">
-                          <a [routerLink]="['/property-details', property._id]" >
+                          <a [routerLink]="['/property-details', property._id]">
                             <h4 class="h5 pt-0">{{property.noOfBedrooms}} BHK Apartment for rent in Wakad</h4></a>
-                          <div class="font-weight-bold text-primary"><span class="fas fa-map-marker-alt mr-2" style="color: red"></span>{{property.propertyLocation}}</div>
+                          <div class="font-weight-bold text-primary"><span class="fas fa-map-marker-alt mr-2"
+                                                                           style="color: red"></span>{{property.propertyLocation}}
+                          </div>
 
                           <ul class="list-group mb-3">
                             <li class="list-group-item small p-0"><span class="fas fa-couch mr-2"></span>
                               {{property.furnishingStatus}}
                             </li>
-                            <li class="list-group-item small p-0"><span class="fas fa-cog mr-2"></span>{{property.preferredTenantType}}
+                            <li class="list-group-item small p-0"><span
+                              class="fas fa-cog mr-2"></span>{{property.preferredTenantType}}
 
                             </li>
-                            <li class="list-group-item small p-0"><span class="fas fa-parking mr-2"></span><span class="font-weight-bold">{{property.noOfCoveredParking}}</span> Covered Parking
+                            <li class="list-group-item small p-0"><span class="fas fa-parking mr-2"></span><span
+                              class="font-weight-bold">{{property.noOfCoveredParking}}</span> Covered Parking
                             </li>
                           </ul>
                           <div class="d-flex justify-content-between">
                             <div class="col-3 pl-0 pr-0">
                               <span class="text-muted font-weight-bold font-small d-block mb-2">Rent</span>
-                              <span class="h5 text-dark font-weight-bold"><span class="fas fa-rupee-sign mr-2"></span>{{property.monthlyRent}}</span>
+                              <span class="h5 text-dark font-weight-bold"><span
+                                class="fas fa-rupee-sign mr-2"></span>{{property.monthlyRent}}</span>
                             </div>
                             <div class="col-3 pl-0 pr-0">
                               <span class="text-muted font-weight-bold font-small d-block mb-2">Sq.Ft</span>

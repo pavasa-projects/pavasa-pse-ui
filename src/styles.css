@@ -40786,7 +40786,10 @@ label.text-white.btn {
 .custom-multiselect .multiselect-dropdown .dropdown-btn {
   min-height: 3.425rem !important;
   font-size: 1.125rem !important;
-  border: 0.0625rem solid #edf0f7 !important;
+  border-bottom: 0.0625rem solid #B7C3D2 !important;
+  border-left: 0 !important;
+  border-right: 0 !important;
+  border-top: 0 !important;
   color: #424767 !important;
   padding: 0.9rem 0.75rem !important;
   font-weight: 300 !important;
@@ -40799,7 +40802,11 @@ label.text-white.btn {
 .custom-multiselect-result .multiselect-dropdown .dropdown-btn {
   min-height: 3.425rem !important;
   font-size: 1.125rem !important;
-  border: 1px solid #adadad !important;
+  border-bottom: 0.0625rem solid #B7C3D2 !important;
+  border-left: 0 !important;
+  border-right: 0 !important;
+  border-top: 0 !important;
+
   color: #424767 !important;
   padding: 0.9rem 0.75rem !important;
   font-weight: 500 !important;
