@@ -24,15 +24,20 @@
             </div>
           </div>
         </div>
-        <div class="d-sm-block @@cta_button_classes">
+        <div class="d-sm-block @@cta_button_classes" >
           <a [routerLink]="['/post-property']" class="btn btn-md btn-secondary animate-up-2 mr-2"><i
-            class="fas fa-plus mr-2"></i> <span class="d-sm-none font-small">List Property</span><span class="d-none d-sm-inline">List a Property</span></a>
-          <button (click)="open(content)" class="d-none d-sm-inline btn btn-md btn-outline-white animate-up-2">Login / Sign Up</button>
+            class="fas fa-plus mr-2"></i> <span class="d-sm-none font-small">List Property</span><span
+            class="d-none d-sm-inline">List a Property</span></a>
+          <button (click)="open(content)" class="d-none d-sm-inline btn btn-md btn-outline-white animate-up-2" *ngIf="!isUserLoggedIn">Login /
+            Sign Up
+          </button>
 
         </div>
-        <ul class="navbar-nav navbar-nav-hover justify-content-center">
+        <ul class="navbar-nav navbar-nav-hover justify-content-center" *ngIf="isUserLoggedIn">
           <li class="nav-item dropdown">
-            <a [routerLink]="['/user-dashboard']" id="supportDropdown" class="btn btn-md btn-outline-white dropdown-toggle  d-none d-sm-block" aria-expanded="false" data-toggle="dropdown">
+            <a [routerLink]="['/user-dashboard']" id="supportDropdown"
+               class="btn btn-md btn-outline-white dropdown-toggle  d-none d-sm-block" aria-expanded="false"
+               data-toggle="dropdown">
               <span class="nav-link-inner-text mr-1">User Dashboard</span>
               <i class="fas fa-angle-down nav-link-arrow fa-lg"></i>
             </a>
@@ -49,13 +54,13 @@
                   </a>
                   <a [routerLink]="['/user-dashboard/my-properties']"
                      class="list-group-item list-group-item-action d-flex align-items-center p-0 py-3 px-lg-4 border-top">
-                                        <span class="icon icon-sm icon-primary"><i class="fas fa-list"></i></span>
+                    <span class="icon icon-sm icon-primary"><i class="fas fa-list"></i></span>
                     <div class="ml-4">
                       <span class="text-dark d-block">My Listings</span>
                       <span class="small">See your properties</span>
                     </div>
                   </a>
-                  <a [routerLink]="['/user-dashboard']"
+                  <a (click)="signOut()"
                      class="list-group-item list-group-item-action d-flex align-items-center p-0 py-3 px-lg-4 border-top">
                     <span class="icon icon-sm icon-primary"><i class="fas fa-sign-out-alt"></i></span>
                     <div class="ml-4">
@@ -68,7 +73,8 @@
           </li>
         </ul>
         <div class="d-flex d-sm-none align-items-center">
-          <a [routerLink]="['/user-dashboard/my-account']"> <i class="fa fa-user fa-2x" style="color: darkgray" aria-hidden="true"></i></a>
+          <a [routerLink]="['/user-dashboard/my-account']"> <i class="fa fa-user fa-2x" style="color: darkgray"
+                                                               aria-hidden="true"></i></a>
 
           <!--<div class="text-center">
 
@@ -136,7 +142,7 @@
                       </div>
                     </div>
 
-                    <button type="submit" (click)="getOTP()" class="btn btn-block btn-primary">Get OTP</button>
+                    <button type="button" (click)="getOTP()" class="btn btn-block btn-primary">Get OTP</button>
                   </form>
 
                   <div class="d-block d-sm-flex justify-content-center align-items-center mt-4">
@@ -188,7 +194,7 @@
                       </div>
                     </div>
 
-                    <button type="submit" (click)="modal.close('verify');verifyOTP()" class="btn btn-block btn-primary">
+                    <button type="button" (click)="modal.close('verify');verifyOTP()" class="btn btn-block btn-primary">
                       Verify
                     </button>
                   </form>
@@ -218,7 +224,7 @@
     <div class="modal-header">
       <div class="col-10">
         <div class="text-left text-md-left mb-3 mt-md-0 ">
-          <h1 class="mb-0 h3" style="color: #2e75b6">Sign in</h1>
+          <h1 class="mb-0 h3" style="color: #2e75b6">Register or Sign in</h1>
           <h5 class="pt-4 font-weight-light">We will send you a One Time Password on your mobile number</h5>
         </div>
       </div>
@@ -246,15 +252,8 @@
                       </div>
                     </div>
 
-                    <button type="submit" (click)="getOTP()" class="btn btn-block btn-primary">Get OTP</button>
+                    <button type="button" (click)="getOTP()" class="btn btn-block btn-primary">Get OTP</button>
                   </form>
-
-                  <div class="d-block d-sm-flex justify-content-center align-items-center mt-4">
-                                <span class="font-weight-normal">
-                                    Not registered?
-                                    <a href="./sign-up.html" class="font-weight-bold">Create account</a>
-                                </span>
-                  </div>
                 </div>
               </div>
             </div>
@@ -291,24 +290,17 @@
                   <form action="#">
                     <!-- Form -->
                     <div class="form-group">
-                      <label for="otp" class="h5">Mobile Number</label>
+                      <label for="otp" class="h5">Enter OTP</label>
                       <div class="input-group mb-4">
-                        <input class="form-control" ngbAutofocus id="otp" placeholder="Enter mobile number"
+                        <input class="form-control" ngbAutofocus id="otp" placeholder="Enter OTP"
                                type="text" aria-label="email address">
                       </div>
                     </div>
 
-                    <button type="submit" (click)="modal.close('verify');verifyOTP()" class="btn btn-block btn-primary">
+                    <button type="button" (click)="modal.close('verify');verifyOTP()" class="btn btn-block btn-primary">
                       Verify
                     </button>
                   </form>
-
-                  <div class="d-block d-sm-flex justify-content-center align-items-center mt-4">
-                                <span class="font-weight-normal">
-                                    Not registered?
-                                    <a href="./sign-up.html" class="font-weight-bold">Create account</a>
-                                </span>
-                  </div>
                 </div>
               </div>
             </div>

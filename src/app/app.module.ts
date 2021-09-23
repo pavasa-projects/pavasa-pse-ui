@@ -35,6 +35,7 @@ import {StoreModule} from '@ngrx/store';
 import {propertyReducer} from './state/property/property.reducer';
 import {PostPropertyModule} from './post-property/post-property.module';
 import { HttpClientModule } from '@angular/common/http';
+import {AmplifyUIAngularModule} from '@aws-amplify/ui-angular';
 
 
 @NgModule({
@@ -73,7 +74,8 @@ import { HttpClientModule } from '@angular/common/http';
     NgxGalleryModule,
     PostPropertyModule,
     StoreModule.forRoot({}),
-    HttpClientModule
+    HttpClientModule,
+    AmplifyUIAngularModule
   ],
   providers: [{provide: NgbDateParserFormatter, useClass: NgbDateCustomParserFormatter}],
   bootstrap: [AppComponent]

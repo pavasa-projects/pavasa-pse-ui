@@ -1,0 +1,46 @@
+{
+  "prod": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-pavasapseui-prod-181902-authRole",
+      "UnauthRoleArn": "arn:aws:iam::863606152357:role/amplify-pavasapseui-prod-181902-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::863606152357:role/amplify-pavasapseui-prod-181902-authRole",
+      "Region": "ap-south-1",
+      "DeploymentBucketName": "amplify-pavasapseui-prod-181902-deployment",
+      "UnauthRoleName": "amplify-pavasapseui-prod-181902-unauthRole",
+      "StackName": "amplify-pavasapseui-prod-181902",
+      "StackId": "arn:aws:cloudformation:ap-south-1:863606152357:stack/amplify-pavasapseui-prod-181902/cfe8a900-187e-11ec-ada3-02860370dc04",
+      "AmplifyAppId": "d2ban4ml0d0zhg"
+    },
+    "categories": {
+      "function": {
+        "pavasapseuiauthCreateAuthChallenge": {
+          "deploymentBucketName": "amplify-pavasapseui-prod-181902-deployment",
+          "s3Key": "amplify-builds/pavasapseuiauthCreateAuthChallenge-7a697a5032556c536b70-build.zip"
+        },
+        "pavasapseuiauthDefineAuthChallenge": {
+          "deploymentBucketName": "amplify-pavasapseui-prod-181902-deployment",
+          "s3Key": "amplify-builds/pavasapseuiauthDefineAuthChallenge-795046716f30686f4554-build.zip"
+        },
+        "pavasapseuiauthVerifyAuthChallengeResponse": {
+          "deploymentBucketName": "amplify-pavasapseui-prod-181902-deployment",
+          "s3Key": "amplify-builds/pavasapseuiauthVerifyAuthChallengeResponse-39666134787879586358-build.zip"
+        },
+        "pseuiCreateAuthChallenge": {
+          "deploymentBucketName": "amplify-pavasapseui-prod-181902-deployment",
+          "s3Key": "amplify-builds/pseuiCreateAuthChallenge-64384879616f66705248-build.zip"
+        },
+        "pseuiDefineAuthChallenge": {
+          "deploymentBucketName": "amplify-pavasapseui-prod-181902-deployment",
+          "s3Key": "amplify-builds/pseuiDefineAuthChallenge-444c3673567878306355-build.zip"
+        },
+        "pseuiVerifyAuthChallengeResponse": {
+          "deploymentBucketName": "amplify-pavasapseui-prod-181902-deployment",
+          "s3Key": "amplify-builds/pseuiVerifyAuthChallengeResponse-787052692b58344a4b59-build.zip"
+        }
+      },
+      "auth": {
+        "pseui": {}
+      }
+    }
+  }
+}
