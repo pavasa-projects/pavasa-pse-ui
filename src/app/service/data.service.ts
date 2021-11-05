@@ -3,18 +3,18 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 
 import {Property} from '../model/property';
+import {Auth} from 'aws-amplify';
+import {CognitoUser} from 'amazon-cognito-identity-js';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
 
-  private propertyAPIUrl = 'http://localhost:5000/api/v1/property';
-  private httpOptions = {
-    headers: new HttpHeaders({
-      'Content-Type': 'application/json'
-    })
-  };
+  // local url
+  // private propertyAPIUrl = 'http://localhost:5000/api/v1/property';
+  // prod api url
+  private propertyAPIUrl = 'https://wi64cu0q36.execute-api.ap-south-1.amazonaws.com/prod/property';
 
 
   constructor(private http: HttpClient) {
@@ -29,7 +29,22 @@ export class DataService {
   }
 
   addProperty(newProperty: Property): Observable<Property> {
-    return this.http.post<Property>(this.propertyAPIUrl, newProperty, this.httpOptions);
+    return this.http.post<Property>(this.propertyAPIUrl, newProperty, this.getHeaders());
+  }
+
+  private getHeaders(): { headers: HttpHeaders } {
+    let jwtIdToken = '';
+    Auth.currentAuthenticatedUser()
+      .then((user: CognitoUser) => {
+        jwtIdToken = user.getSignInUserSession().getIdToken().getJwtToken();
+      });
+
+    return {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'auth-token': jwtIdToken
+      })
+    };
   }
 
   /*updateProperty(updatedProperty: Property): Observable<void> {

@@ -58,5 +58,16 @@ export const VALIDATION_MSG = {
   amenities: {
     required: 'Please select amenities.'
   },
+  mobileNumber: {
+    required: 'Please enter valid 10 digits mobile number.',
+    pattern: 'Please enter valid 10 digits mobile number.',
+    servererr: 'Please enter correct 10 digits mobile number or try again after some time.'
+  },
+  otp: {
+    required: 'Please enter valid 4 digits otp.',
+    pattern: 'Please enter valid 4 digits otp.',
+    invalid: 'Please enter correct 4 digits otp.',
+    servererr: 'Please enter correct 4 digits otp or try again after some time.'
+  },
 
 };

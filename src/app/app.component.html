@@ -24,11 +24,12 @@
             </div>
           </div>
         </div>
-        <div class="d-sm-block @@cta_button_classes" >
+        <div class="d-sm-block @@cta_button_classes">
           <a [routerLink]="['/post-property']" class="btn btn-md btn-secondary animate-up-2 mr-2"><i
             class="fas fa-plus mr-2"></i> <span class="d-sm-none font-small">List Property</span><span
             class="d-none d-sm-inline">List a Property</span></a>
-          <button (click)="open(content)" class="d-none d-sm-inline btn btn-md btn-outline-white animate-up-2" *ngIf="!isUserLoggedIn">Login /
+          <button (click)="open(content)" class="d-none d-sm-inline btn btn-md btn-outline-white animate-up-2"
+                  *ngIf="!isUserLoggedIn">Login /
             Sign Up
           </button>
 
@@ -97,11 +98,11 @@
         <div class="d-flex text-center justify-content-center align-items-center" role="contentinfo">
           <p class="font-weight-normal font-small mt-2">© Pavasa
             <span class="current-year">2021</span>. All rights reserved. &nbsp;&nbsp;
-            <a target="_blank" href="https://themesberg.com/blog">Privacy policy</a>
+            <a target="_blank" href="/">Privacy policy</a>
             <span> | </span>
-            <a target="_blank" href="https://themesberg.com/products">Sitemap</a>
+            <a target="_blank" href="/">Sitemap</a>
             <span> | </span>
-            <a target="_blank" href="https://themesberg.com/products">Contact us</a>
+            <a target="_blank" href="/">Contact us</a>
           </p>
 
         </div>
@@ -109,208 +110,116 @@
     </div>
   </div>
 </footer>
-<ng-template #menuItems let-modal>
-  <div>
-    <div class="modal-header">
-      <div class="col-10">
-        <div class="text-left text-md-left mb-3 mt-md-0 ">
-          <h1 class="mb-0 h3" style="color: #2e75b6">Sign in</h1>
-          <h5 class="pt-4 font-weight-light">We will send you a One Time Password on your mobile number</h5>
-        </div>
-      </div>
-      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
-        <i class="fa fa-times fa-lg" aria-hidden="true"></i>
-      </button>
-    </div>
-    <div>
-      <main>
-
-        <section class=" d-flex section-image py-5 py-lg-0">
-          <div class="container">
-            <div class="row justify-content-center">
-
-              <div class="col-12 d-flex align-items-center justify-content-center">
-                <div
-                  class="signin-inner mt-3 mt-lg-0 bg-white shadow-soft border rounded border-light p-2 p-lg-4 w-100 fmxw-500">
-                  <form action="#">
-                    <!-- Form -->
-                    <div class="form-group">
-                      <label for="mobileNumber" class="h5">Mobile Number</label>
-                      <div class="input-group mb-4">
-                        <input class="form-control" ngbAutofocus id="mobileNumber" placeholder="Enter mobile number"
-                               type="text" aria-label="email address">
-                      </div>
-                    </div>
-
-                    <button type="button" (click)="getOTP()" class="btn btn-block btn-primary">Get OTP</button>
-                  </form>
-
-                  <div class="d-block d-sm-flex justify-content-center align-items-center mt-4">
-                                <span class="font-weight-normal">
-                                    Not registered?
-                                    <a href="./sign-up.html" class="font-weight-bold">Create account</a>
-                                </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </main>
-    </div>
-    <div class="modal-footer">
-
-    </div>
-  </div>
-  <div *ngIf="showOTPPage">
-    <div class="modal-header">
-      <div class="col-10">
-        <div class="text-left text-md-left mb-3 mt-md-0 ">
-          <h1 class="mb-0 h3" style="color: #2e75b6">Verification</h1>
-          <h5 class="pt-4 font-weight-light">You will get OTP via SMS</h5>
-        </div>
-      </div>
-      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
-        <i class="fa fa-times fa-lg" aria-hidden="true"></i>
-      </button>
-    </div>
-    <div>
-      <main>
-
-        <section class=" d-flex section-image py-5 py-lg-0">
-          <div class="container">
-            <div class="row justify-content-center">
-
-              <div class="col-12 d-flex align-items-center justify-content-center">
-                <div
-                  class="signin-inner mt-3 mt-lg-0 bg-white shadow-soft border rounded border-light p-2 p-lg-4 w-100 fmxw-500">
-                  <form action="#">
-                    <!-- Form -->
-                    <div class="form-group">
-                      <label for="otp" class="h5">Mobile Number</label>
-                      <div class="input-group mb-4">
-                        <input class="form-control" ngbAutofocus id="otp" placeholder="Enter mobile number"
-                               type="text" aria-label="email address">
-                      </div>
-                    </div>
-
-                    <button type="button" (click)="modal.close('verify');verifyOTP()" class="btn btn-block btn-primary">
-                      Verify
-                    </button>
-                  </form>
-
-                  <div class="d-block d-sm-flex justify-content-center align-items-center mt-4">
-                                <span class="font-weight-normal">
-                                    Not registered?
-                                    <a href="./sign-up.html" class="font-weight-bold">Create account</a>
-                                </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </main>
-    </div>
-    <div class="modal-footer">
-
-    </div>
-  </div>
-
-</ng-template>
 
 <ng-template #content let-modal>
-  <div *ngIf="showLoginPage">
-    <div class="modal-header">
-      <div class="col-10">
-        <div class="text-left text-md-left mb-3 mt-md-0 ">
-          <h1 class="mb-0 h3" style="color: #2e75b6">Register or Sign in</h1>
-          <h5 class="pt-4 font-weight-light">We will send you a One Time Password on your mobile number</h5>
+  <form action="#" method="post" [formGroup]="form">
+    <div *ngIf="showLoginPage">
+      <div class="modal-header">
+        <div class="col-10">
+          <div class="text-left text-md-left mb-3 mt-md-0 ">
+            <h1 class="mb-0 h3" style="color: #2e75b6">Register or Sign in</h1>
+            <h5 class="pt-4 font-weight-light">We will send you a One Time Password on your mobile number</h5>
+          </div>
         </div>
+        <button type="button" class="close" aria-label="Close" (click)="closeModal()">
+          <i class="fa fa-times fa-lg" aria-hidden="true"></i>
+        </button>
       </div>
-      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
-        <i class="fa fa-times fa-lg" aria-hidden="true"></i>
-      </button>
-    </div>
-    <div>
-      <main>
+      <div>
+        <main>
 
-        <section class=" d-flex section-image py-5 py-lg-0">
-          <div class="container">
-            <div class="row justify-content-center">
+          <section class=" d-flex section-image py-5 py-lg-0">
+            <div class="container">
+              <div class="row justify-content-center">
 
-              <div class="col-12 d-flex align-items-center justify-content-center">
-                <div
-                  class="signin-inner mt-3 mt-lg-0 bg-white shadow-soft border rounded border-light p-2 p-lg-4 w-100 fmxw-500">
-                  <form action="#">
+                <div class="col-12 d-flex align-items-center justify-content-center">
+                  <div
+                    class="signin-inner mt-3 mt-lg-0 bg-white shadow-soft border rounded border-light p-2 p-lg-4 w-100 fmxw-500">
+
                     <!-- Form -->
                     <div class="form-group">
                       <label for="mobileNumber" class="h5">Mobile Number</label>
                       <div class="input-group mb-4">
                         <input class="form-control" ngbAutofocus id="mobileNumber" placeholder="Enter mobile number"
-                               type="text" aria-label="email address">
+                               type="text" aria-label="mobile number" formControlName="mobileNumber" maxlength="10">
+                      </div>
+                      <div class="text-danger" *ngIf="displayMessage.mobileNumber">
+                        {{displayMessage.mobileNumber}}
                       </div>
                     </div>
 
-                    <button type="button" (click)="getOTP()" class="btn btn-block btn-primary">Get OTP</button>
-                  </form>
+                    <button type="button" (click)="getOTP()" [disabled]="!form.controls.mobileNumber.valid"
+                            class="btn btn-block btn-primary">Get OTP
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </section>
-      </main>
-    </div>
-    <div class="modal-footer">
-
-    </div>
-  </div>
-  <div *ngIf="showOTPPage">
-    <div class="modal-header">
-      <div class="col-10">
-        <div class="text-left text-md-left mb-3 mt-md-0 ">
-          <h1 class="mb-0 h3" style="color: #2e75b6">Verification</h1>
-          <h5 class="pt-4 font-weight-light">You will get OTP via SMS</h5>
-        </div>
+          </section>
+        </main>
       </div>
-      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
-        <i class="fa fa-times fa-lg" aria-hidden="true"></i>
-      </button>
+      <div class="modal-footer">
+
+      </div>
     </div>
-    <div>
-      <main>
+    <div *ngIf="showOTPPage">
+      <div class="modal-header">
+        <div class="col-10">
+          <div class="text-left text-md-left mb-3 mt-md-0 ">
+            <h1 class="mb-0 h3" style="color: #2e75b6">Verification</h1>
+            <h5 class="pt-4 font-weight-light">Please enter 4 digits OTP sent on <span
+              class="font-weight-bold">{{this.form.controls.mobileNumber.value}}</span></h5>
+          </div>
+        </div>
+        <button type="button" class="close" aria-label="Close" (click)="closeModal()">
+          <i class="fa fa-times fa-lg" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div>
+        <main>
 
-        <section class=" d-flex section-image py-5 py-lg-0">
-          <div class="container">
-            <div class="row justify-content-center">
+          <section class=" d-flex section-image py-5 py-lg-0">
+            <div class="container">
+              <div class="row justify-content-center">
 
-              <div class="col-12 d-flex align-items-center justify-content-center">
-                <div
-                  class="signin-inner mt-3 mt-lg-0 bg-white shadow-soft border rounded border-light p-2 p-lg-4 w-100 fmxw-500">
-                  <form action="#">
+                <div class="col-12 d-flex align-items-center justify-content-center">
+                  <div
+                    class="signin-inner mt-3 mt-lg-0 bg-white shadow-soft border rounded border-light p-2 p-lg-4 w-100 fmxw-500">
+
                     <!-- Form -->
                     <div class="form-group">
                       <label for="otp" class="h5">Enter OTP</label>
                       <div class="input-group mb-4">
                         <input class="form-control" ngbAutofocus id="otp" placeholder="Enter OTP"
-                               type="text" aria-label="email address">
+                               type="text" aria-label="email address" formControlName="otp" maxlength="4">
+                      </div>
+                      <div class="text-danger" *ngIf="displayMessage.otp">
+                        {{displayMessage.otp}}
+                      </div>
+                      <div class="text-center text-secondary font-medium" *ngIf="showCounter">
+                        {{count}}  seconds
+                      </div>
+                      <div class="text-center text-secondary font-medium" *ngIf="!showCounter">
+                        <a href="" (click)="resendOTP()"> Resend OTP </a>
                       </div>
                     </div>
 
-                    <button type="button" (click)="modal.close('verify');verifyOTP()" class="btn btn-block btn-primary">
+                    <button type="button" (click)="verifyOTP()"
+                            [disabled]="!form.controls.otp.valid" class="btn btn-block btn-primary">
                       Verify
                     </button>
-                  </form>
+
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </section>
-      </main>
-    </div>
-    <div class="modal-footer">
+          </section>
+        </main>
+      </div>
+      <div class="modal-footer">
 
+      </div>
     </div>
-  </div>
 
+  </form>
 </ng-template>

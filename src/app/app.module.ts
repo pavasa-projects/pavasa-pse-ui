@@ -1,7 +1,7 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 
-import {AppComponent} from './app.component';
+import {AppComponent, FormatTimePipe} from './app.component';
 import {HeadroomModule} from '@ctrl/ngx-headroom';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {AppRoutingModule} from './app-routing.module';
@@ -34,8 +34,9 @@ import {MyAccountComponent} from './user-dashboard/my-account/my-account.compone
 import {StoreModule} from '@ngrx/store';
 import {propertyReducer} from './state/property/property.reducer';
 import {PostPropertyModule} from './post-property/post-property.module';
-import { HttpClientModule } from '@angular/common/http';
+import {HttpClientModule} from '@angular/common/http';
 import {AmplifyUIAngularModule} from '@aws-amplify/ui-angular';
+import {FormWithoutStoreComponent} from './common/form-without-store/form-without-store.component';
 
 
 @NgModule({
@@ -59,7 +60,8 @@ import {AmplifyUIAngularModule} from '@aws-amplify/ui-angular';
     PostPropertyPricingPlanComponent,
     UserDashboardComponent,
     MyPropertiesComponent,
-    MyAccountComponent
+    MyAccountComponent,
+    FormatTimePipe
   ],
   imports: [
     BrowserModule,
