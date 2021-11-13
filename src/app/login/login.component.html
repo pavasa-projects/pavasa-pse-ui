@@ -1,1 +1,112 @@
-<p>login works!</p>
+<ng-template #content let-modal>
+  <form action="#" method="post" [formGroup]="form">
+    <div *ngIf="showLoginPage">
+      <div class="modal-header">
+        <div class="col-10">
+          <div class="text-left text-md-left mb-3 mt-md-0 ">
+            <h1 class="mb-0 h3" style="color: #2e75b6">Register or Sign in</h1>
+            <h5 class="pt-4 font-weight-light">We will send you a One Time Password on your mobile number</h5>
+          </div>
+        </div>
+        <button type="button" class="close" aria-label="Close" (click)="closeModal()">
+          <i class="fa fa-times fa-lg" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div>
+        <main>
+
+          <section class=" d-flex section-image py-5 py-lg-0">
+            <div class="container">
+              <div class="row justify-content-center">
+
+                <div class="col-12 d-flex align-items-center justify-content-center">
+                  <div
+                    class="signin-inner mt-3 mt-lg-0 bg-white shadow-soft border rounded border-light p-2 p-lg-4 w-100 fmxw-500">
+
+                    <!-- Form -->
+                    <div class="form-group">
+                      <label for="mobileNumber" class="h5">Mobile Number</label>
+                      <div class="input-group mb-4">
+                        <input class="form-control" ngbAutofocus id="mobileNumber" placeholder="Enter mobile number"
+                               type="text" aria-label="mobile number" formControlName="mobileNumber" maxlength="10">
+                      </div>
+                      <div class="text-danger" *ngIf="displayMessage.mobileNumber">
+                        {{displayMessage.mobileNumber}}
+                      </div>
+                    </div>
+
+                    <button type="button" (click)="getOTP()" [disabled]="!form.controls.mobileNumber.valid"
+                            class="btn btn-block btn-primary">Get OTP
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
+      <div class="modal-footer">
+
+      </div>
+    </div>
+    <div *ngIf="showOTPPage">
+      <div class="modal-header">
+        <div class="col-10">
+          <div class="text-left text-md-left mb-3 mt-md-0 ">
+            <h1 class="mb-0 h3" style="color: #2e75b6">Verification</h1>
+            <h5 class="pt-4 font-weight-light">Please enter 4 digits OTP sent on <span
+              class="font-weight-bold">{{this.form.controls.mobileNumber.value}}</span></h5>
+          </div>
+        </div>
+        <button type="button" class="close" aria-label="Close" (click)="closeModal()">
+          <i class="fa fa-times fa-lg" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div>
+        <main>
+
+          <section class=" d-flex section-image py-5 py-lg-0">
+            <div class="container">
+              <div class="row justify-content-center">
+
+                <div class="col-12 d-flex align-items-center justify-content-center">
+                  <div
+                    class="signin-inner mt-3 mt-lg-0 bg-white shadow-soft border rounded border-light p-2 p-lg-4 w-100 fmxw-500">
+
+                    <!-- Form -->
+                    <div class="form-group">
+                      <label for="otp" class="h5">Enter OTP</label>
+                      <div class="input-group mb-4">
+                        <input class="form-control" ngbAutofocus id="otp" placeholder="Enter OTP"
+                               type="text" aria-label="email address" formControlName="otp" maxlength="4">
+                      </div>
+                      <div class="text-danger" *ngIf="displayMessage.otp">
+                        {{displayMessage.otp}}
+                      </div>
+                      <div class="text-center text-secondary font-medium" *ngIf="showCounter">
+                        {{count}}  seconds
+                      </div>
+                      <div class="text-center text-secondary font-medium" *ngIf="!showCounter">
+                        <a href="" (click)="resendOTP()"> Resend OTP </a>
+                      </div>
+                    </div>
+
+                    <button type="button" (click)="verifyOTP()"
+                            [disabled]="!form.controls.otp.valid" class="btn btn-block btn-primary">
+                      Verify
+                    </button>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
+      <div class="modal-footer">
+
+      </div>
+    </div>
+
+  </form>
+</ng-template>

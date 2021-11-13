@@ -19,6 +19,7 @@ import {MyAccountComponent} from './user-dashboard/my-account/my-account.compone
 import {MyPropertiesComponent} from './user-dashboard/my-properties/my-properties.component';
 import {ThankYouComponent} from './post-property/thank-you/thank-you.component';
 import {PropertyDetailsResolve} from './property-details/resolver/property-details-resolve';
+import {AuthGuardService} from './login/auth-guard/auth-guard.service';
 
 const routes: Routes = [
   {path: 'property-search', component: PropertySearchComponent},
@@ -35,7 +36,7 @@ const routes: Routes = [
     ]
   },
   {path: 'post-property', component: PostPropertyComponent},
-  {path: 'post-property-details', component: PostPropertyDetailsComponent},
+  {path: 'post-property-details', canActivate: [AuthGuardService], component: PostPropertyDetailsComponent},
   {path: 'post-property-location', component: PostPropertyLocationComponent},
   {path: 'post-property-rent', component: PostPropertyRentComponent},
   {path: 'post-property-more-details', component: PostPropertyMoreDetailsComponent},
