@@ -29,7 +29,7 @@
     "ng-multiselect-dropdown": "^1.0.0",
     "ngx-google-places-autocomplete": "^2.0.5",
     "rxjs": "~7.8.1",
-    "tslib": "^2.0.0",
+    "tslib": "^2.6.2",
     "zone.js": "~0.13.3"
   },
   "devDependencies": {
