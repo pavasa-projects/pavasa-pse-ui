@@ -65,6 +65,7 @@ amplify-gradle-config.json
 amplifytools.xcconfig
 .secret-*
 **.sample
+*.angular*
 #amplify-do-not-edit-end
 /.angular/cache/16.2.6/angular-webpack/3ee479c32e2fa044baa278deb5140f1b4f0669bc/0.pack
 /.angular/cache/16.2.6/angular-webpack/3ee479c32e2fa044baa278deb5140f1b4f0669bc/1.pack
