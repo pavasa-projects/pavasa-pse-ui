@@ -1,4 +1,4 @@
-import {ActivatedRouteSnapshot, Resolve, RouterStateSnapshot} from '@angular/router';
+import { ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import {Property} from '../../model/property';
 import {Observable} from 'rxjs';
 import {DataService} from '../../service/data.service';
@@ -7,7 +7,7 @@ import {Injectable} from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class PropertyDetailsResolve implements Resolve<Property> {
+export class PropertyDetailsResolve  {
 
   constructor(private dataService: DataService) {
 

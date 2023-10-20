@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot} from '@angular/router';
+import { ActivatedRouteSnapshot, Router, RouterStateSnapshot } from '@angular/router';
 import {Auth} from 'aws-amplify';
 import {CognitoUser} from 'amazon-cognito-identity-js';
 import {AppComponent} from '../../app.component';
@@ -7,7 +7,7 @@ import {AppComponent} from '../../app.component';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthGuardService implements CanActivate {
+export class AuthGuardService  {
 
   isLoggedIn = false;
 
