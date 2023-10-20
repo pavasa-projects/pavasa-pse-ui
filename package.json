@@ -22,7 +22,7 @@
     "@aws-amplify/ui-angular": "^1.0.25",
     "@ctrl/ngx-headroom": "^4.0.0",
     "@fortawesome/fontawesome-free": "^5.15.2",
-    "@ng-bootstrap/ng-bootstrap": "^9.0.2",
+    "@ng-bootstrap/ng-bootstrap": "^15.1.1",
     "@ngrx/store": "^16.3.0",
     "aws-amplify": "^4.2.10",
     "hammerjs": "^2.0.8",
