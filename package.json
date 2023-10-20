@@ -20,7 +20,7 @@
     "@angular/platform-browser-dynamic": "~16.2.10",
     "@angular/router": "~16.2.10",
     "@aws-amplify/ui-angular": "^1.0.25",
-    "@ctrl/ngx-headroom": "^4.0.0",
+    "@ctrl/ngx-headroom": "^5.0.0",
     "@fortawesome/fontawesome-free": "^6.4.2",
     "@ng-bootstrap/ng-bootstrap": "^15.1.1",
     "@ngrx/store": "^16.3.0",
