@@ -14,7 +14,7 @@ export const PS_CONSTANTS = {
     selectAllText: 'Select All',
     unSelectAllText: 'UnSelect All',
     enableCheckAll: false,
-    itemsShowLimit: 1,c
+    itemsShowLimit: 1,
     allowSearchFilter: false,
     showSelectedItemsAtTop: true
   },
