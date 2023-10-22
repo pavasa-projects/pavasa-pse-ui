@@ -9,7 +9,7 @@ import {PropertySearchComponent} from './property-search/property-search.compone
 import {NgbDateParserFormatter, NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {AutocompleteLocationComponent} from './common/autocomplete-location/autocomplete-location.component';
-import {GooglePlaceModule} from 'ngx-google-places-autocomplete';
+import {NgxGpAutocompleteModule} from '@angular-magic/ngx-gp-autocomplete';
 import {NgMultiSelectDropDownModule} from 'ng-multiselect-dropdown';
 import {SearchResultComponent} from './search-result/search-result.component';
 import {FormComponent} from './common/form/form.component';
@@ -17,7 +17,7 @@ import {PropertyDetailsComponent} from './property-details/property-details.comp
 import {PropertyAboutComponent} from './property-details/property-about/property-about.component';
 import {PropertyAmenitiesComponent} from './property-details/property-amenities/property-amenities.component';
 import {PropertyLocationComponent} from './property-details/property-location/property-location.component';
-import {NgxGalleryModule} from 'ngx-gallery-9';
+import {NgxGalleryModule} from '@kolkov/ngx-gallery';
 import {PostPropertyComponent} from './post-property/post-property.component';
 import {LoginComponent} from './login/login.component';
 import {PostPropertyDetailsComponent} from './post-property/post-property-details/post-property-details.component';
@@ -35,7 +35,6 @@ import {StoreModule} from '@ngrx/store';
 import {propertyReducer} from './state/property/property.reducer';
 import {PostPropertyModule} from './post-property/post-property.module';
 import {HttpClientModule} from '@angular/common/http';
-import {AmplifyUIAngularModule} from '@aws-amplify/ui-angular';
 import {FormWithoutStoreComponent} from './common/form-without-store/form-without-store.component';
 
 
@@ -70,14 +69,13 @@ import {FormWithoutStoreComponent} from './common/form-without-store/form-withou
     AppRoutingModule,
     NgbModule,
     ReactiveFormsModule,
-    GooglePlaceModule,
+    NgxGpAutocompleteModule,
     NgMultiSelectDropDownModule.forRoot(),
     FormsModule,
     NgxGalleryModule,
     PostPropertyModule,
     StoreModule.forRoot({}),
-    HttpClientModule,
-    AmplifyUIAngularModule
+    HttpClientModule
   ],
   providers: [{provide: NgbDateParserFormatter, useClass: NgbDateCustomParserFormatter}],
   bootstrap: [AppComponent]

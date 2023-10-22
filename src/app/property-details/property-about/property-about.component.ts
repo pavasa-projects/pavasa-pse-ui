@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {NgxGalleryAnimation, NgxGalleryImage, NgxGalleryOptions} from 'ngx-gallery-9';
+import {NgxGalleryAnimation, NgxGalleryImage, NgxGalleryOptions} from '@kolkov/ngx-gallery';
 import {ActivatedRoute} from '@angular/router';
 import {Property} from '../../model/property';
 

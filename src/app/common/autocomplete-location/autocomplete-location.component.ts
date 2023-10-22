@@ -1,6 +1,7 @@
 import {AfterViewInit, Component, EventEmitter, OnInit, Output, ViewChild} from '@angular/core';
-import {GooglePlaceDirective} from 'ngx-google-places-autocomplete';
-import {Address} from 'ngx-google-places-autocomplete/objects/address';
+import {NgxGpAutocompleteDirective} from '@angular-magic/ngx-gp-autocomplete';
+// import {GooglePlaceDirective} from 'ngx-google-places-autocomplete';
+
 
 @Component({
   selector: 'app-autocomplete-location',
@@ -8,8 +9,8 @@ import {Address} from 'ngx-google-places-autocomplete/objects/address';
   styleUrls: ['./autocomplete-location.component.css']
 })
 export class AutocompleteLocationComponent {
-  @ViewChild('placesRef') placesRef: GooglePlaceDirective;
-  @Output() setAddress: EventEmitter<Address> = new EventEmitter<Address>();
+  @ViewChild('placesRef') placesRef: NgxGpAutocompleteDirective;
+  // @Output() setAddress: EventEmitter<Address> = new EventEmitter<Address>();
 
   constructor() {
   }
@@ -19,8 +20,9 @@ export class AutocompleteLocationComponent {
     componentRestrictions: {country: 'IN'}
   };
 
-  public handleAddressChange(address: Address): void {
-    this.setAddress.emit(address);
+  public handleAddressChange(place: google.maps.places.PlaceResult): void {
+    // TODO - uncomment below
+    // this.setAddress.emit(address);
   }
 
 

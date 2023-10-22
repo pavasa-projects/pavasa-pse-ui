@@ -4,9 +4,11 @@ import {FormBuilder, Validators} from '@angular/forms';
 import {Store} from '@ngrx/store';
 import {AppState} from '../../state/app.state';
 import {Router} from '@angular/router';
-import {Address} from 'ngx-google-places-autocomplete/objects/address';
-import {GooglePlaceDirective} from 'ngx-google-places-autocomplete';
+
+import {NgxGpAutocompleteDirective} from '@angular-magic/ngx-gp-autocomplete';
+
 import {Property} from '../../model/property';
+import PlaceResult = google.maps.places.PlaceResult;
 
 @Component({
   selector: 'app-post-property-location',
@@ -18,7 +20,7 @@ export class PostPropertyLocationComponent extends FormComponent {
   lng: number;
   formattedAddress: string;
 
-  @ViewChild('placesRef') placesRef: GooglePlaceDirective;
+  @ViewChild('placesRef') placesRef: NgxGpAutocompleteDirective;
   options = {
     types: [],
     componentRestrictions: {country: 'IN'}
@@ -50,19 +52,19 @@ export class PostPropertyLocationComponent extends FormComponent {
     property.lng = this.lng;
   }
 
-  public handleAddressChange(address: Address): void {
-    let societyName = '';
-    let formattedAddress = address.formatted_address;
-    if (address.name !== address.address_components[0].long_name) {
-      societyName = address.name;
-      formattedAddress = societyName + ', ' + address.formatted_address;
-    }
-    this.formattedAddress = formattedAddress;
-    this.form.get('propertyLocation').setValue(formattedAddress);
-    this.form.get('societyName').setValue(societyName);
-    this.form.markAsDirty();
-    this.lat = address.geometry.location.lat();
-    this.lng = address.geometry.location.lng();
+  public handleAddressChange(address: PlaceResult): void {
+    // let societyName = '';
+    // let formattedAddress = address.formatted_address;
+    // if (address.name !== address.addres`s_components[0].long_name) {
+    //   societyName = address.name;
+    //   formattedAddress = societyName + ', ' + address.formatted_address;
+    // }
+    // this.formattedAddress = formattedAddress;
+    // this.form.get('propertyLocation').setValue(formattedAddress);
+    // this.form.get('societyName').setValue(societyName);
+    // this.form.markAsDirty();
+    // this.lat = address.geometry.location.lat();
+    // this.lng = address.geometry.location.lng();
     // console.log('Society name ' + address.name); // if this and address 1 is same name then ask user to enter society name manually
     // console.log('address 1 ' + address.address_components[0].long_name);
     // console.log('formatted address ' + address.formatted_address);
